@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            white: '#FFFFFF',
+            darkGray: '#333333',
+            orange: '#FF6A00',
+            lightGray: '#F7F7F7',
+            red: '#FF0000',
+            lightOrange: '#FF8533',
+            darkOrange: '#E56000',
+            mediumGray: '#666666',
+            veryLightGray: '#F0F0F0',
+            successGreen: '#22C55E',
+            warningYellow: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
+          },
+          spacing: {
+            'xs': '4px',
+            'sm': '8px',
+            'md': '16px',
+            'lg': '24px',
+            'xl': '32px',
+            'xxl': '48px',
+          },
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-darkGray bg-white">
+  <%- include('partials/header') %>
+  
+  <!-- Hero Section -->
+
+  <section id="hero" class="relative min-h-screen flex items-center justify-center">
+    <!-- Background Image + Dark Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/images/image5.jpg" 
+        alt="Xiaomi Device Background" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[#121212] bg-opacity-50"></div>
+    </div>
+  
+    <!-- Text Content -->
+    <div class="container relative z-10 text-center px-4">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        Flash Your Xiaomi Device <span class="text-[#FF8533]">Safely &amp; Easily</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto backdrop-blur-sm p-4 rounded-lg">
+        The most trusted tool for updating, recovering, or customizing your Xiaomi smartphone's firmware.
+      </p>
+    </div>
+  </section>
+
+  <!-- What Is Section -->
+  <section id="what-is" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
+        What is Xiaomi Flash Tool?
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+      </h2>
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <p class="text-lg mb-4">Xiaomi Flash Tool (Mi Flash Tool) is an official software developed by Xiaomi for flashing firmware packages onto Xiaomi devices. It allows users to restore, update, or downgrade their Xiaomi phone's firmware with ease.</p>
+          <p class="text-lg mb-4">The tool provides a simple interface to connect your device in fastboot mode and flash the appropriate ROM files. It's essential for recovering bricked devices, installing custom ROMs, or reverting to stock firmware.</p>
+          <p class="text-lg">As an official Xiaomi utility, it ensures compatibility across the entire range of Xiaomi, Redmi, and POCO devices, making it the trusted choice for firmware operations.</p>
+        </div>
+        <div class="md:w-1/2">
+            <img src="/images/mobile1.jpg" alt="Xiaomi Flash Tool Interface"
+            alt="Xiaomi Flash Tool Interface" 
+            class="w-full max-w-md   transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compatibility Section -->
+  <section id="compatibility" class="py-20 bg-lightGray">
+    <div class="container mx-auto px-4 text-center">
+      <!-- Centered Title -->
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-darkGray relative">
+        Device Compatibility
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+      </h2>
+  
+      <!-- Centered Description Paragraph -->
+      <p class="text-lg md:text-xl text-mediumGray max-w-3xl mx-auto mb-12">
+        Our tool supports a wide range of Xiaomi, Redmi, and POCO devices. <br>
+        Here's a list of the major device series that work seamlessly with Xiaomi Flash Tool.
+      </p>
+  
+      <!-- Centered Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <h3 class="text-2xl font-semibold text-darkGray mb-4">Xiaomi</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi 14 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi 13 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi 12 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi 11 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi 10 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Mi Mix Series</li>
+          </ul>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <h3 class="text-2xl font-semibold text-darkGray mb-4">Redmi</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi Note 13 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi Note 12 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi Note 11 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi Note 10 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi K60 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi K50 Series</li>
+          </ul>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <h3 class="text-2xl font-semibold text-darkGray mb-4">POCO</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO F5 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO F4 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO X5 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO X4 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO M5 Series</li>
+            <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO M4 Series</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
+        Xiaomi Flash Tool Features
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-bolt text-white text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Fast Flashing</h3>
+            <p class="text-mediumGray">Flash firmware packages to your device quickly and efficiently</p>
+          </div>
+        </div>
+        
+        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-check-circle text-white text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Compatibility</h3>
+            <p class="text-mediumGray">Support for all Xiaomi, Redmi, and POCO devices</p>
+          </div>
+        </div>
+        
+        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-undo text-white text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Recovery Options</h3>
+            <p class="text-mediumGray">Multiple flashing modes including clean install and preserve data</p>
+          </div>
+        </div>
+        
+        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-user-shield text-white text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Secure Process</h3>
+            <p class="text-mediumGray">Official tool ensures safe and secure flashing procedures</p>
+          </div>
+        </div>
+        
+        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-desktop text-white text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">User-Friendly Interface</h3>
+            <p class="text-mediumGray">Simple and intuitive design for users of all experience levels</p>
+          </div>
+        </div>
+        
+        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-terminal text-white text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Advanced Options</h3>
+            <p class="text-mediumGray">Expert settings for advanced users and specific flashing needs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- How To Use Section -->
+  <section id="how-to-use" class="py-20 bg-lightGray">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
+        How To Use
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+      </h2>
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="download-cloud" class="text-lightOrange"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Download & Install</h3>
+          <p class="text-mediumGray">Download the tool and follow our simple installation instructions.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="monitor" class="text-lightOrange"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Connect Device</h3>
+          <p class="text-mediumGray">Connect your Xiaomi device via USB and enable USB debugging.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="smartphone" class="text-lightOrange"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Select Firmware</h3>
+          <p class="text-mediumGray">Choose the correct firmware package for your specific device model.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="check-circle" class="text-lightOrange"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Flash & Verify</h3>
+          <p class="text-mediumGray">Start the flashing process and wait for verification to complete.</p>
+        </div>
+      </div>
+  
+      <div class="text-center">
+        <p class="text-lg mb-4">Want detailed instructions with screenshots and troubleshooting tips?</p>
+        <a href="/how-to-use" class="inline-flex items-center justify-center gap-2 bg-lightOrange hover:bg-darkOrange text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300">
+          View Complete Guide <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Download Section -->
+  <section id="download" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
+        Download Xiaomi Flash Tool
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+      </h2>
+      
+      <div class="max-w-5xl mx-auto bg-lightGray rounded-2xl p-8 shadow-md">
+        <p class="text-lg text-center mb-10">Get the official version of Xiaomi Flash Tool directly from our website. 
+        We provide all versions to ensure compatibility with your specific device and operating system.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <!-- Windows Card -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div class="bg-lightOrange p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12  rounded-full flex items-center justify-center">
+                  <img src="https://img.icons8.com/fluency/28/windows-10.png" alt="Windows" class="w-7 h-7" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold">Windows</h3>
+                  <p class="text-sm text-mediumGray">Windows 10/11 (64-bit)</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5">
+              <ul class="text-sm space-y-2 mb-6">
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">📄</span> Version 3.6.0
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">📅</span> Released: May 10, 2025
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">💾</span> Size: 45.8 MB
+                </li>
+              </ul>
+              <a href="#" class="block w-full text-center bg-lightOrange hover:bg-darkOrange text-white font-semibold py-2.5 rounded-lg transition-colors duration-300">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- macOS Card -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div class="bg-lightOrange p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12  rounded-full flex items-center justify-center">
+                  <img src="https://img.icons8.com/ios-filled/28/mac-os.png" alt="macOS" />
+                </div>
+                
+                 <div>
+                    <h3 class="text-xl font-bold">macOs</h3>
+                    <p class="text-sm text-mediumGray">macOS 11.0+ (Intel/ARM)</p>
+                  </div>
+              </div>
+            </div>
+            <div class="p-5">
+              <ul class="text-sm space-y-2 mb-6">
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">📄</span> Version 3.6.0
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">📅</span> Released: May 10, 2025
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">💾</span> Size: 48.2 MB
+                </li>
+              </ul>
+              <a href="#" class="block w-full text-center bg-lightOrange hover:bg-darkOrange text-white font-semibold py-2.5 rounded-lg transition-colors duration-300">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Linux Card -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div class="bg-darkOrange p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12  rounded-full flex items-center justify-center">
+                  <img src="https://img.icons8.com/ios-filled/28/linux.png" alt="Linux" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold">Linux</h3>
+                  <p class="text-sm text-mediumGray">Ubuntu/Debian/Fedora</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5">
+              <ul class="text-sm space-y-2 mb-6">
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">📄</span> Version 3.6.0
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">📅</span> Released: May 10, 2025
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lightOrange mr-2">💾</span> Size: 42.5 MB
+                </li>
+              </ul>
+              <a href="#" class="block w-full text-center bg-lightOrange hover:bg-darkOrange text-white font-semibold py-2.5 rounded-lg transition-colors duration-300">
+                Download
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center">
+          <a href="/download" class="inline-flex items-center justify-center gap-2 border-2 border-lightOrange text-lightOrange hover:bg-lightOrange hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300">
+            View All Download Options <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Section -->
+  <section class="py-20 bg-lightGray">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 relative">
+        Installation Guidelines
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+      </h2>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-6 mb-12">
+          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
+            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">1</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-1">Download the Tool</h3>
+              <p class="text-mediumGray">Get the latest version of Xiaomi Flash Tool from our official website</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
+            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">2</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-1">Extract the Package</h3>
+              <p class="text-mediumGray">Unzip the downloaded file to a location on your computer</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
+            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">3</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-1">Install Drivers</h3>
+              <p class="text-mediumGray">Run the included driver installer or download Xiaomi USB drivers separately if needed</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
+            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">4</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-1">Run as Administrator</h3>
+              <p class="text-mediumGray">Right-click on MiFlash.exe and select "Run as administrator"</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
+            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">5</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-1">Connect Your Device</h3>
+              <p class="text-mediumGray">Put your device in Fastboot mode and connect it to your computer via USB</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl flex items-start gap-4">
+          <i class="fas fa-exclamation-triangle text-red-500 text-2xl flex-shrink-0 mt-1"></i>
+          <div>
+            <h3 class="text-xl font-semibold text-red-500 mb-2">Important Notice</h3>
+            <p class="text-mediumGray">Always back up your data before flashing your device. The flashing process will erase all data on your device unless you specifically select the "Save User Data" option.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-lightGray">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
+        Frequently Asked Questions
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+      </h2>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+              How to use Xiaomi Flash Tool?
+              <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+              <div class="p-5 pt-0 text-mediumGray">
+                <p>To use Xiaomi Flash Tool, download and install it, connect your device in fastboot mode, and follow the on-screen instructions. Select the firmware package, choose your flashing options, and click "Flash" to begin the process.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+              Which devices are supported?
+              <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+              <div class="p-5 pt-0 text-mediumGray">
+                <p>All Xiaomi, Redmi, and POCO devices are supported by the Xiaomi Flash Tool. This includes the latest Xiaomi 14 series, Redmi Note 13 series, and POCO F5 series, as well as older models.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+              Common flashing issues
+              <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+              <div class="p-5 pt-0 text-mediumGray">
+                <p>Most issues are resolved by installing the correct drivers and using original USB cables. Ensure your device has sufficient battery (at least 50%) and that you've selected the correct firmware package for your specific device model.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+              Safety precautions
+              <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
+              <div class="p-5 pt-0 text-mediumGray">
+                <p>Always backup your data before flashing. Ensure stable power supply and USB connection during the process. Never disconnect your device during the flashing process to avoid bricking your device. Use original USB cables and follow instructions carefully.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+
+  <!-- Lucide Icons Initialization -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Main JavaScript -->
+  <script>
+    // Header scroll effect
+    // const header = document.querySelector('header');
+    
+    // window.addEventListener('scroll', function() {
+    //   if (window.scrollY > 50) {
+    //     header.classList.add('bg-white', 'shadow-md');
+    //     header.classList.remove('bg-transparent');
+    //   } else {
+    //     header.classList.add('bg-transparent');
+    //     header.classList.remove('bg-white', 'shadow-md');
+    //   }
+    // });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+      });
+    }
+
+    // Accordion functionality for FAQ section
+    const accordionToggles = document.querySelectorAll('.accordion-toggle');
+    
+    accordionToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const item = toggle.parentElement;
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('i');
+        
+        // Close all accordion items
+        document.querySelectorAll('.accordion-content').forEach(content => {
+          if (content !== toggle.nextElementSibling) {
+            content.style.maxHeight = null;
+          }
+        });
+        
+        document.querySelectorAll('.accordion-toggle i').forEach(i => {
+          if (i !== icon) {
+            i.classList.remove('rotate-180');
+          }
+        });
+        
+        // Toggle current item
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          icon.classList.remove('rotate-180');
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+
+    // Add animation classes
+    document.head.insertAdjacentHTML('beforeend', `
+      <style>
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+          animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .animate-fade-in-delayed {
+          animation: fadeIn 0.6s ease 0.2s forwards;
+          opacity: 0;
+        }
+        
+        .animate-fade-in-delayed-2 {
+          animation: fadeIn 0.6s ease 0.4s forwards;
+          opacity: 0;
+        }
+      </style>
+    `);
+  </script>
+</body>
+</html>

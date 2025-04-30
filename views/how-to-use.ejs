@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use | Xiaomi Flash Tool</title>
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            white: '#FFFFFF',
+            darkGray: '#333333', 
+            orange: '#FF6A00',
+            lightGray: '#F7F7F7',
+            red: '#FF0000',
+            lightOrange: '#FF8533',
+            darkOrange: '#E56000',
+            mediumGray: '#666666',
+            veryLightGray: '#F0F0F0',
+            successGreen: '#22C55E',
+            warningYellow: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
+          },
+          spacing: {
+            'xs': '4px',
+            'sm': '8px', 
+            'md': '16px',
+            'lg': '24px',
+            'xl': '32px',
+            'xxl': '48px',
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-lightGray font-sans">
+
+  <%- include('partials/header') %>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-100 min-h-[60vh] flex items-center justify-center text-orange-600 text-center relative py-28 px-4">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,10,10,0.1)_0%,transparent_70%)] pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+        <h1 class="text-5xl font-bold mb-4">How to Use Xiaomi Flash Tool</h1>
+        <p class="text-xl text-black">Follow our step-by-step guide to safely update your device's firmware.</p>
+    </div>
+</section>
+
+  <!-- Prerequisites Section -->
+  <section class="py-xxl px-md bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-xl text-darkGray">Before You Begin</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+        <!-- Download Card -->
+        <div class="bg-white rounded-xl shadow-md p-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-orange text-3xl mb-md text-center">
+            <i class="fas fa-download"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-sm text-center text-darkGray">Latest Version</h3>
+          <p class="text-mediumGray text-center mb-md">Download & install the latest  </p>
+          <a href="/download" class="block w-full text-center bg-orange hover:bg-darkOrange text-white py-sm rounded-lg transition-colors duration-300">
+            Download Now
+          </a>
+        </div>
+
+        <!-- USB Cable Card -->
+        <div class="bg-white rounded-xl shadow-md p-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-orange text-3xl mb-md text-center">
+            <i class="fas fa-usb"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-sm text-center text-darkGray">USB Cable</h3>
+          <p class="text-mediumGray text-center mb-md">Use a high-quality USB cable</p>
+          <a href="/download" class="block w-full text-center bg-orange hover:bg-darkOrange text-white py-sm rounded-lg transition-colors duration-300">
+            Download Now
+          </a>
+        </div>
+
+        <!-- Battery Card -->
+        <div class="bg-white rounded-xl shadow-md p-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-orange text-3xl mb-md text-center">
+            <i class="fas fa-battery-half"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-sm text-center text-darkGray">Battery Power</h3>
+          <p class="text-mediumGray text-center mb-md">Ensure 50% battery charge</p>
+          <a href="/download" class="block w-full text-center bg-orange hover:bg-darkOrange text-white py-sm rounded-lg transition-colors duration-300">
+            Download Now
+          </a>
+        </div>
+
+        <!-- Backup Card -->
+        <div class="bg-white rounded-xl shadow-md p-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-orange text-3xl mb-md text-center">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-sm text-center text-darkGray">Backup Data</h3>
+          <p class="text-mediumGray text-center mb-md">Backup important data first</p>
+          <a href="/download" class="block w-full text-center bg-orange hover:bg-darkOrange text-white py-sm rounded-lg transition-colors duration-300">
+            Download Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-Step Guide -->
+  <section class="py-xxl px-md bg-lightGray">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-xl text-darkGray">Step-by-Step Guide</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+        <!-- Step 1 -->
+        <div class="bg-white rounded-xl p-lg relative group hover:shadow-lg transition-shadow duration-300">
+          <div class="absolute -left-3 -top-3 w-10 h-10 bg-orange text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+          <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600" 
+               alt="Download and Install" 
+               class="w-full h-48 object-cover rounded-lg mb-md"
+               loading="lazy">
+          <h3 class="text-xl font-semibold mb-sm text-darkGray">Download and Install</h3>
+          <p class="text-mediumGray">Download the latest version and follow the installation wizard</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-xl p-lg relative group hover:shadow-lg transition-shadow duration-300">
+          <div class="absolute -left-3 -top-3 w-10 h-10 bg-orange text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+          <img src="https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg?auto=compress&cs=tinysrgb&w=600" 
+               alt="Connect Device" 
+               class="w-full h-48 object-cover rounded-lg mb-md"
+               loading="lazy">
+          <h3 class="text-xl font-semibold mb-sm text-darkGray">Connect Your Device</h3>
+          <p class="text-mediumGray">Use a high-quality USB cable to connect your device</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-xl p-lg relative group hover:shadow-lg transition-shadow duration-300">
+          <div class="absolute -left-3 -top-3 w-10 h-10 bg-orange text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+          <img src="https://images.pexels.com/photos/38568/apple-imac-ipad-workplace-38568.jpeg?auto=compress&cs=tinysrgb&w=600" 
+               alt="Select Device" 
+               class="w-full h-48 object-cover rounded-lg mb-md"
+               loading="lazy">
+          <h3 class="text-xl font-semibold mb-sm text-darkGray">Select Your Device</h3>
+          <p class="text-mediumGray">Choose your device from the dropdown menu</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warning Section -->
+  <section class="py-xxl px-md bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-xl text-darkGray">Important Warnings</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+        <!-- Warning Cards -->
+        <div class="bg-red/5 border-l-4 border-red rounded-r-lg p-lg">
+          <h4 class="flex items-center font-semibold text-lg mb-md text-red">
+            <i class="fas fa-exclamation-triangle mr-sm"></i>
+            Warranty Void
+          </h4>
+          <p class="text-mediumGray">Using this tool may void your device warranty</p>
+        </div>
+
+        <div class="bg-warningYellow/5 border-l-4 border-warningYellow rounded-r-lg p-lg">
+          <h4 class="flex items-center font-semibold text-lg mb-md text-warningYellow">
+            <i class="fas fa-bolt mr-sm"></i>
+            Risk of Bricking
+          </h4>
+          <p class="text-mediumGray">Incorrect usage can damage your device</p>
+        </div>
+
+        <div class="bg-orange/5 border-l-4 border-orange rounded-r-lg p-lg">
+          <h4 class="flex items-center font-semibold text-lg mb-md text-orange">
+            <i class="fas fa-database mr-sm"></i>
+            Data Loss
+          </h4>
+          <p class="text-mediumGray">All data will be erased during flashing</p>
+        </div>
+
+        <div class="bg-darkOrange/5 border-l-4 border-darkOrange rounded-r-lg p-lg">
+          <h4 class="flex items-center font-semibold text-lg mb-md text-darkOrange">
+            <i class="fas fa-battery-half mr-sm"></i>
+            Battery Required
+          </h4>
+          <p class="text-mediumGray">Ensure 50% battery charge minimum</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Do's and Don'ts Section -->
+<section class="py-5 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Do's and Don'ts</h2>
+        <p class="text-lg text-gray-600">Important guidelines to follow</p>
+      </div>
+      
+      <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
+        <!-- Do's Card -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center gap-4 justify-center mb-6">
+            <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+            <h3 class="text-2xl font-semibold">Do's</h3>
+          </div>
+          <ul class="space-y-3 text-center">
+            <li class="relative pl-6 text-gray-700 before:content-['✓'] before:absolute before:left-0 before:text-green-500">Always backup your data before flashing</li>
+            <li class="relative pl-6 text-gray-700 before:content-['✓'] before:absolute before:left-0 before:text-green-500">Use high-quality USB cables for connection</li>
+            <li class="relative pl-6 text-gray-700 before:content-['✓'] before:absolute before:left-0 before:text-green-500">Ensure stable power supply during flashing</li>
+            <li class="relative pl-6 text-gray-700 before:content-['✓'] before:absolute before:left-0 before:text-green-500">Update to the latest version of DeviceFlash Pro</li>
+            <li class="relative pl-6 text-gray-700 before:content-['✓'] before:absolute before:left-0 before:text-green-500">Check device compatibility before flashing</li>
+            <li class="relative pl-6 text-gray-700 before:content-['✓'] before:absolute before:left-0 before:text-green-500">Follow all on-screen instructions carefully</li>
+          </ul>
+        </div>
+  
+        <!-- Don'ts Card -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center gap-4 justify-center mb-6">
+            <i class="fas fa-times-circle text-red-500 text-2xl"></i>
+            <h3 class="text-2xl font-semibold">Don'ts</h3>
+          </div>
+          <ul class="space-y-3 text-center">
+            <li class="relative pl-6 text-gray-700 before:content-['×'] before:absolute before:left-0 before:text-red-500">Don't disconnect your device during flashing</li>
+            <li class="relative pl-6 text-gray-700 before:content-['×'] before:absolute before:left-0 before:text-red-500">Don't use your device while flashing is in progress</li>
+            <li class="relative pl-6 text-gray-700 before:content-['×'] before:absolute before:left-0 before:text-red-500">Don't flash firmware on a low battery device</li>
+            <li class="relative pl-6 text-gray-700 before:content-['×'] before:absolute before:left-0 before:text-red-500">Don't interrupt the flashing process</li>
+            <li class="relative pl-6 text-gray-700 before:content-['×'] before:absolute before:left-0 before:text-red-500">Don't use damaged or low-quality USB cables</li>
+            <li class="relative pl-6 text-gray-700 before:content-['×'] before:absolute before:left-0 before:text-red-500">Don't flash incompatible firmware versions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Troubleshooting Section -->
+<section class="py-10 bg-lightGray">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Troubleshooting</h2>
+        <p class="text-lg text-gray-600">Solutions for common issues</p>
+      </div>
+  
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <!-- Device Not Detected -->
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <h3 class="text-xl font-semibold text-orange-500 mb-4">Device Not Detected</h3>
+          <ol class="list-decimal list-inside text-left space-y-2 text-gray-700">
+            <li>Try a different USB cable</li>
+            <li>Use a different USB port (preferably USB 3.0)</li>
+            <li>Restart your device and computer</li>
+            <li>Check if device drivers are installed correctly</li>
+            <li>Enable USB debugging mode on your device (for Android)</li>
+          </ol>
+        </div>
+  
+        <!-- Flashing Process Fails -->
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <h3 class="text-xl font-semibold text-orange-500 mb-4">Flashing Process Fails</h3>
+          <ol class="list-decimal list-inside text-left space-y-2 text-gray-700">
+            <li>Ensure your device has sufficient battery power</li>
+            <li>Check if you're using the correct firmware version</li>
+            <li>Verify your device is in the correct mode for flashing</li>
+            <li>Try reinstalling DeviceFlash Pro</li>
+            <li>Close other programs that might interfere with USB connections</li>
+          </ol>
+        </div>
+  
+        <!-- Device Stuck in Boot Loop -->
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <h3 class="text-xl font-semibold text-orange-500 mb-4">Device Stuck in Boot Loop</h3>
+          <ol class="list-decimal list-inside text-left space-y-2 text-gray-700">
+            <li>Boot your device into recovery mode</li>
+            <li>Use the "Repair" option in DeviceFlash Pro</li>
+            <li>Flash the stock firmware for your device</li>
+            <li>If all else fails, contact our support team</li>
+          </ol>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Recovery Section -->
+<section class="py-10 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Recovery Options</h2>
+        <p class="text-lg text-gray-600">What to do if flashing fails</p>
+      </div>
+  
+      <div class="flex flex-col lg:flex-row gap-5 items-start">
+        <!-- Text Content -->
+        <div class="bg-white p-8 rounded-xl shadow-md flex-1 text-center">
+          <p class="text-gray-700 mb-6">
+            If your device becomes unresponsive after flashing, don't panic. DeviceFlash Pro includes several recovery tools to help restore your device to working condition:
+          </p>
+  
+          <h3 class="text-xl font-semibold mt-8 mb-4">Emergency Recovery Mode</h3>
+          <p class="text-gray-700 mb-2">Hold the following button combination while connecting your device to enter recovery mode:</p>
+          <ul class="text-left list-disc list-inside max-w-md mx-auto mb-6 text-gray-700">
+            <li><strong>Android:</strong> Volume Down + Power</li>
+            <li><strong>iPhone:</strong> Volume Up + Power</li>
+            <li><strong>Windows:</strong> Volume Down + Power</li>
+          </ul>
+  
+          <h3 class="text-xl font-semibold mt-8 mb-4">Using Rescue Mode</h3>
+          <p class="text-gray-700 mb-2">DeviceFlash Pro includes a "Rescue Mode" option that can detect devices in recovery mode and offers options to restore them:</p>
+          <ol class="text-left list-decimal list-inside max-w-md mx-auto text-gray-700 space-y-2 mb-6">
+            <li>Open DeviceFlash Pro and click on "Rescue Mode"</li>
+            <li>Connect your device while holding the recovery key combination</li>
+            <li>Follow the on-screen instructions to restore your device</li>
+          </ol>
+  
+          <!-- Warning Note -->
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-md flex items-center gap-3 mt-6 text-yellow-800">
+            <i class="fas fa-exclamation-triangle text-xl"></i>
+            <p class="text-sm">
+              If you're unable to recover your device using the above methods, please contact our support team for assistance.
+            </p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <%- include('partials/footer') %>
+
+</body>
+</html>

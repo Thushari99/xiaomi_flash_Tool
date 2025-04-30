@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiaomi Flash Tool Download Page</title>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            white: '#FFFFFF',
+            darkGray: '#333333',
+            orange: '#FF6A00',
+            lightGray: '#F7F7F7',
+            red: '#FF0000',
+            lightOrange: '#FF8533',
+            darkOrange: '#E56000',
+            mediumGray: '#666666',
+            veryLightGray: '#F0F0F0',
+            successGreen: '#22C55E',
+            warningYellow: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
+          },
+          spacing: {
+            'xs': '4px',
+            'sm': '8px',
+            'md': '16px',
+            'lg': '24px',
+            'xl': '32px',
+            'xxl': '48px',
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style type="text/css">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F7F7F7;
+      color: #333333;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    /* Animation for card hover */
+    .download-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .download-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    /* Pulse animation for download buttons */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+    
+    .download-btn:hover {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Header -->
+
+  <%- include('partials/header') %>
+
+  <!-- Hero Section -->
+  <section class="bg-gray-100 min-h-[60vh] flex items-center justify-center text-orange-600 text-center relative py-28 px-4">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,10,10,0.1)_0%,transparent_70%)] pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+        <h1 class="text-5xl font-bold mb-4">Download Xiaomi Flash Tool</h1>
+        <p class="text-xl text-black">Get the latest version of our software for your operating system. Always use the most recent version for best compatibility and security.</p>
+    </div>
+</section>
+
+  <!-- Download Section -->
+  <section id="download" class="py-xxl px-md bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-xl text-darkGray">Xiaomi Mi Flash Tool Download</h2>
+      <p class="text-center text-mediumGray mb-xl max-w-3xl mx-auto">Choose the version compatible with your operating system. Our tool supports Windows, macOS, and Linux platforms with optimized performance.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-lg mt-xl">
+        <!-- Windows Card -->
+        <div class="download-card bg-white rounded-xl shadow-lg p-lg border border-veryLightGray">
+          <div class="flex items-center mb-lg">
+            <div class="bg-lightGray p-md rounded-full mr-md">
+              <img src="https://img.icons8.com/fluency/28/windows-10.png" alt="Windows" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-darkGray">Windows</h3>
+              <p class="text-sm text-mediumGray">Windows 10/11 (64-bit)</p>
+            </div>
+          </div>
+          <ul class="text-sm text-mediumGray space-y-sm mb-lg pl-sm">
+            <li class="flex items-center"><i class="fas fa-file-alt text-orange mr-sm"></i> Version 3.6.0</li>
+            <li class="flex items-center"><i class="fas fa-calendar text-orange mr-sm"></i> Released: May 10, 2025</li>
+            <li class="flex items-center"><i class="fas fa-download text-orange mr-sm"></i> Size: 45.8 MB</li>
+          </ul>
+          <a href="#" class="download-btn block w-full text-center bg-orange hover:bg-darkOrange text-white font-semibold py-md rounded-lg transition-colors duration-300">
+            <i class="fas fa-download mr-sm"></i> Download for Windows
+          </a>
+        </div>
+
+
+          <!-- macOS Card -->
+        <div class="download-card bg-white rounded-xl shadow-lg p-lg border border-veryLightGray">
+          <div class="flex items-center mb-lg">
+            <div class="bg-lightGray p-md rounded-full mr-md">
+              <!-- <img src="https://img.icons8.com/ios-filled/28/ffffff/mac-os.png" alt="macOS" /> -->
+              <img src="https://img.icons8.com/ios-filled/28/mac-os.png" alt="macOS" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-darkGray">macOs</h3>
+              <p class="text-sm text-mediumGray">macOS 11.0+ (Intel/ARM)</p>
+            </div>
+          </div>
+          <ul class="text-sm text-mediumGray space-y-sm mb-lg pl-sm">
+            <li class="flex items-center"><i class="fas fa-file-alt text-orange mr-sm"></i> Version 3.6.0</li>
+            <li class="flex items-center"><i class="fas fa-calendar text-orange mr-sm"></i> Released: May 10, 2025</li>
+            <li class="flex items-center"><i class="fas fa-download text-orange mr-sm"></i> Size: 45.8 MB</li>
+          </ul>
+          <a href="#" class="download-btn block w-full text-center bg-orange hover:bg-darkOrange text-white font-semibold py-md rounded-lg transition-colors duration-300">
+            <i class="fas fa-download mr-sm"></i> Download for Mac
+          </a>
+        </div>
+      
+      
+        <div class="download-card bg-white rounded-xl shadow-lg p-lg border border-veryLightGray">
+          <div class="flex items-center mb-lg">
+            <div class="bg-lightGray p-md rounded-full mr-md">
+             
+              <img src="https://img.icons8.com/ios-filled/28/linux.png" alt="Linux" />
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-darkGray">Linux</h3>
+              <p class="text-sm text-mediumGray">Ubuntu/Debian/Fedora</p>
+            </div>
+          </div>
+          <ul class="text-sm text-mediumGray space-y-sm mb-lg pl-sm">
+            <li class="flex items-center"><i class="fas fa-file-alt text-orange mr-sm"></i> Version 3.6.0</li>
+            <li class="flex items-center"><i class="fas fa-calendar text-orange mr-sm"></i> Released: May 10, 2025</li>
+            <li class="flex items-center"><i class="fas fa-download text-orange mr-sm"></i> Size: 45.8 MB</li>
+          </ul>
+          <a href="#" class="download-btn block w-full text-center bg-orange hover:bg-darkOrange text-white font-semibold py-md rounded-lg transition-colors duration-300">
+            <i class="fas fa-download mr-sm"></i> Download for Linux
+          </a>
+        </div>
+</div>
+
+       
+
+  <!-- System Requirements -->
+  <section id="system-requirements" class="py-xxl px-md bg-lightGray">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-xl text-darkGray">System Requirements</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+        <!-- Windows Requirements -->
+        <div class="bg-white rounded-xl shadow-md p-lg">
+          <div class="flex items-center mb-lg">
+            <img src="https://img.icons8.com/fluency/28/windows-10.png" alt="Windows" class="mr-md" />
+            <h3 class="text-xl font-bold text-darkGray">Windows</h3>
+          </div>
+          
+          <div class="mb-lg">
+            <h4 class="font-semibold text-lg mb-md text-darkGray">Minimum Requirements:</h4>
+            <ul class="space-y-sm text-mediumGray">
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Windows 8.1 or newer (64-bit)</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>2 GHz dual-core processor</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>4 GB RAM</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>500 MB free disk space</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>USB 2.0 port</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>.NET Framework 4.6.2 or newer</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-lg mb-md text-darkGray">Recommended:</h4>
+            <ul class="space-y-sm text-mediumGray">
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Windows 10/11 (64-bit)</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>2.5 GHz quad-core processor</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>8 GB RAM</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>1 GB free disk space</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>USB 3.0 port</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>SSD storage</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- macOS Requirements -->
+        <div class="bg-white rounded-xl shadow-md p-lg">
+          <div class="flex items-center mb-lg">
+            <img src="https://img.icons8.com/ios-filled/28/000000/mac-os.png" alt="macOS" class="mr-md" />
+            <h3 class="text-xl font-bold text-darkGray">macOS</h3>
+          </div>
+          
+          <div class="mb-lg">
+            <h4 class="font-semibold text-lg mb-md text-darkGray">Minimum Requirements:</h4>
+            <ul class="space-y-sm text-mediumGray">
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>macOS 10.13 (High Sierra) or newer</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Intel Core i3 or Apple M1 processor</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>4 GB RAM</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>500 MB free disk space</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>USB 2.0 port</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-lg mb-md text-darkGray">Recommended:</h4>
+            <ul class="space-y-sm text-mediumGray">
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>macOS 11.0 (Big Sur) or newer</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Intel Core i5 or Apple M1 processor</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>8 GB RAM</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>1 GB free disk space</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>USB 3.0 port</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>SSD storage</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Linux Requirements -->
+        <div class="bg-white rounded-xl shadow-md p-lg">
+          <div class="flex items-center mb-lg">
+            <img src="https://img.icons8.com/ios-filled/24/000000/linux.png" alt="Linux" class="mr-md" />
+            <h3 class="text-xl font-bold text-darkGray">Linux</h3>
+          </div>
+          
+          <div class="mb-lg">
+            <h4 class="font-semibold text-lg mb-md text-darkGray">Minimum Requirements:</h4>
+            <ul class="space-y-sm text-mediumGray">
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Ubuntu 18.04, Debian 10, Fedora 33, or compatible</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>2 GHz dual-core processor</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>4 GB RAM</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>500 MB free disk space</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>USB 2.0 port</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>libusb 1.0</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-lg mb-md text-darkGray">Recommended:</h4>
+            <ul class="space-y-sm text-mediumGray">
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Ubuntu 20.04+, Debian 11, Fedora 35+</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>2.5 GHz quad-core processor</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>8 GB RAM</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>1 GB free disk space</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>USB 3.0 port</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>SSD storage</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Important Notes -->
+      <div class="bg-white rounded-xl shadow-md p-lg mt-xl">
+        <div class="flex items-start">
+          <div class="text-warningYellow text-2xl mr-md mt-1">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg mb-md text-darkGray">Important Notes:</h4>
+            <ul class="space-y-sm text-mediumGray">
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>USB driver installation may require administrator privileges</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Older devices may need special drivers</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Firewall/antivirus may interfere with device detection</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-successGreen mt-1 mr-sm"></i>
+                <span>Extra temporary space needed during flashing operations</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Guide -->
+  <section id="installation" class="py-xxl px-md bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-xl text-darkGray">Installation Guideline</h2>
+      
+
+      <div class="flex justify-center gap-lg mb-xl">
+        <button class="tab-button flex items-center gap-sm px-lg py-md rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 active" data-tab="windows">
+          <img src="https://img.icons8.com/fluency/28/windows-10.png" alt="Windows" class="w-6 h-6" />
+          <span class="font-medium text-darkGray">Windows</span>
+        </button>
+        
+        <button class="tab-button flex items-center gap-sm px-lg py-md rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300" data-tab="mac">
+          <img src="https://img.icons8.com/ios-filled/28/000000/mac-os.png" alt="macOS" class="w-6 h-6" />
+          <span class="font-medium text-darkGray">macOS</span>
+        </button>
+        
+        <button class="tab-button flex items-center gap-sm px-lg py-md rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300" data-tab="linux">
+          <img src="https://img.icons8.com/ios-filled/24/000000/linux.png" alt="Linux" class="w-6 h-6" />
+          <span class="font-medium text-darkGray">Linux</span>
+        </button>
+      </div>
+      
+      <!-- Tab Contents -->
+      <div class="tab-content active bg-lightGray rounded-lg p-lg" id="windows">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">1</div>
+            <h3 class="text-lg font-semibold mb-sm">Download the installer</h3>
+            <p class="text-mediumGray">Download the Windows installer package (.exe) from our official website. We recommend getting the latest version for best compatibility.</p>
+          </div>
+          
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">2</div>
+            <h3 class="text-lg font-semibold mb-sm">Run the installer</h3>
+            <p class="text-mediumGray">Right-click the downloaded file and select 'Run as administrator'. If a security warning appears, click 'Yes' to proceed.</p>
+          </div>
+          
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">3</div>
+            <h3 class="text-lg font-semibold mb-sm">Complete installation</h3>
+            <p class="text-mediumGray">Follow the on-screen instructions to complete the installation. Make sure to install the device drivers when prompted.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content bg-lightGray rounded-lg p-lg" id="mac">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">1</div>
+            <h3 class="text-lg font-semibold mb-sm">Download the DMG</h3>
+            <p class="text-mediumGray">Download the macOS disk image (.dmg) file from our official website. Verify the download is complete before proceeding.</p>
+          </div>
+          
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">2</div>
+            <h3 class="text-lg font-semibold mb-sm">Install the app</h3>
+            <p class="text-mediumGray">Open the DMG file and drag the Xiaomi Flash Tool app into your Applications folder when prompted.</p>
+          </div>
+          
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">3</div>
+            <h3 class="text-lg font-semibold mb-sm">Allow security access</h3>
+            <p class="text-mediumGray">Open System Preferences > Security & Privacy > General tab. Click "Allow" to permit the app to run on your Mac.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content bg-lightGray rounded-lg p-lg" id="linux">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">1</div>
+            <h3 class="text-lg font-semibold mb-sm">Download the package</h3>
+            <p class="text-mediumGray">Download the appropriate package (.deb for Ubuntu/Debian or .rpm for Fedora) that matches your Linux distribution.</p>
+          </div>
+          
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">2</div>
+            <h3 class="text-lg font-semibold mb-sm">Install via terminal</h3>
+            <p class="text-mediumGray">Open terminal and install using <code>sudo dpkg -i filename.deb</code> (Debian) or <code>sudo rpm -i filename.rpm</code> (Fedora).</p>
+          </div>
+          
+          <div class="bg-white p-lg rounded-lg shadow-sm">
+            <div class="rounded-full bg-orange w-10 h-10 flex items-center justify-center text-white font-bold mb-md">3</div>
+            <h3 class="text-lg font-semibold mb-sm">Fix dependencies</h3>
+            <p class="text-mediumGray">If needed, run <code>sudo apt-get install -f</code> (Debian) to fix any missing dependencies automatically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Archived Versions -->
+  <section id="archive-list" class="py-xxl px-md bg-lightGray">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-xl text-darkGray">Archived Versions</h2>
+      
+      <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+        <table class="min-w-full">
+          <thead>
+            <tr class="bg-orange text-white">
+              <th class="py-md px-lg text-left">Version</th>
+              <th class="py-md px-lg text-left">Release Date</th>
+              <th class="py-md px-lg text-left">OS</th>
+              <th class="py-md px-lg text-left">Size</th>
+              <th class="py-md px-lg text-left">Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-lightGray hover:bg-veryLightGray transition-colors duration-200">
+              <td class="py-md px-lg">3.5.2</td>
+              <td class="py-md px-lg">Mar 22, 2025</td>
+              <td class="py-md px-lg">Windows</td>
+              <td class="py-md px-lg">44.8 MB</td>
+              <td class="py-md px-lg">
+                <a href="#" class="text-orange hover:text-darkOrange transition-colors duration-200 flex items-center">
+                  <i class="fas fa-download mr-sm"></i> Download
+                </a>
+              </td>
+            </tr>
+            <tr class="border-b border-lightGray hover:bg-veryLightGray transition-colors duration-200">
+              <td class="py-md px-lg">3.5.2</td>
+              <td class="py-md px-lg">Mar 22, 2025</td>
+              <td class="py-md px-lg">macOS</td>
+              <td class="py-md px-lg">47.3 MB</td>
+              <td class="py-md px-lg">
+                <a href="#" class="text-orange hover:text-darkOrange transition-colors duration-200 flex items-center">
+                  <i class="fas fa-download mr-sm"></i> Download
+                </a>
+              </td>
+            </tr>
+            <tr class="border-b border-lightGray hover:bg-veryLightGray transition-colors duration-200">
+              <td class="py-md px-lg">3.5.2</td>
+              <td class="py-md px-lg">Mar 22, 2025</td>
+              <td class="py-md px-lg">Linux</td>
+              <td class="py-md px-lg">41.9 MB</td>
+              <td class="py-md px-lg">
+                <a href="#" class="text-orange hover:text-darkOrange transition-colors duration-200 flex items-center">
+                  <i class="fas fa-download mr-sm"></i> Download
+                </a>
+              </td>
+            </tr>
+            <tr class="border-b border-lightGray hover:bg-veryLightGray transition-colors duration-200">
+              <td class="py-md px-lg">3.4.9</td>
+              <td class="py-md px-lg">Jan 10, 2025</td>
+              <td class="py-md px-lg">Windows</td>
+              <td class="py-md px-lg">43.1 MB</td>
+              <td class="py-md px-lg">
+                <a href="#" class="text-orange hover:text-darkOrange transition-colors duration-200 flex items-center">
+                  <i class="fas fa-download mr-sm"></i> Download
+                </a>
+              </td>
+            </tr>
+            <tr class="hover:bg-veryLightGray transition-colors duration-200">
+              <td class="py-md px-lg">3.4.9</td>
+              <td class="py-md px-lg">Jan 10, 2025</td>
+              <td class="py-md px-lg">macOS</td>
+              <td class="py-md px-lg">46.2 MB</td>
+              <td class="py-md px-lg">
+                <a href="#" class="text-orange hover:text-darkOrange transition-colors duration-200 flex items-center">
+                  <i class="fas fa-download mr-sm"></i> Download
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warning & Disclaimer -->
+  <section id="warning" class="py-xxl px-md bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-xl text-darkGray">Warning & Disclaimer</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg mb-xl">
+        <div class="bg-red/5 border-l-4 border-red rounded-r-lg p-lg">
+          <h4 class="flex items-center font-semibold text-lg mb-md text-red">
+            <i class="fas fa-exclamation-triangle mr-sm text-red"></i>
+            Warranty Void
+          </h4>
+          <p class="text-mediumGray">Using this tool may void your device warranty. We are not officially supported by device manufacturers.</p>
+        </div>
+        
+        <div class="bg-warningYellow/5 border-l-4 border-warningYellow rounded-r-lg p-lg">
+          <h4 class="flex items-center font-semibold text-lg mb-md text-warningYellow">
+            <i class="fas fa-bolt mr-sm text-warningYellow"></i>
+            Risk of Bricking
+          </h4>
+          <p class="text-mediumGray">Incorrect usage or interruptions during flashing can permanently damage your device.</p>
+        </div>
+        
+        <div class="bg-orange/5 border-l-4 border-orange rounded-r-lg p-lg">
+          <h4 class="flex items-center font-semibold text-lg mb-md text-orange">
+            <i class="fas fa-database mr-sm text-orange"></i>
+            Data Loss
+          </h4>
+          <p class="text-mediumGray">Flashing operations will erase all data on your device. Always create backups before proceeding.</p>
+        </div>
+        
+        <div class="bg-darkOrange/5 border-l-4 border-darkOrange rounded-r-lg p-lg">
+          <h4 class="flex items-center font-semibold text-lg mb-md text-darkOrange">
+            <i class="fas fa-battery-half mr-sm text-darkOrange"></i>
+            Battery Requirements
+          </h4>
+          <p class="text-mediumGray">Ensure your device has at least 50% battery charge before starting the flashing process.</p>
+        </div>
+      </div>
+      
+      <!-- Legal Disclaimer -->
+      <div class="bg-veryLightGray rounded-xl p-lg">
+        <h3 class="text-xl font-bold mb-md text-darkGray">Legal Disclaimer</h3>
+        <p class="text-mediumGray leading-relaxed">
+          Xiaomi Flash Tool is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose.
+        </p>
+        <p class="text-mediumGray leading-relaxed my-md">
+          The entire risk as to the quality and performance of this software is with you. Should the software prove defective, you assume the cost of all necessary servicing, repair, or correction.
+        </p>
+        <p class="text-mediumGray leading-relaxed">
+          By downloading and using this tool, you acknowledge that you have read, understood, and agree to all the warnings and disclaimers above.
+        </p>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <script>
+    // Tab Functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.classList.remove('text-orange');
+            btn.classList.add('text-darkGray');
+          });
+          
+          tabContents.forEach(content => {
+            content.classList.remove('active');
+          });
+
+          // Add active class to clicked button and corresponding content
+          button.classList.add('active');
+          button.classList.add('text-orange');
+          button.classList.remove('text-darkGray');
+          
+          const target = button.getAttribute('data-tab');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+      
+      // Add styling to active tab
+      document.querySelector('.tab-button.active').classList.add('text-orange');
+      document.querySelector('.tab-button.active').classList.remove('text-darkGray');
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Add scroll animation for download cards
+      const animateOnScroll = () => {
+        const cards = document.querySelectorAll('.download-card');
+        
+        cards.forEach(card => {
+          const cardTop = card.getBoundingClientRect().top;
+          const triggerBottom = window.innerHeight * 0.8;
+          
+          if (cardTop < triggerBottom) {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }
+        });
+      };
+      
+      // Set initial styles for animation
+      document.querySelectorAll('.download-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      });
+      
+      // Run once on load
+      window.addEventListener('load', animateOnScroll);
+      
+      // Run on scroll
+      window.addEventListener('scroll', animateOnScroll);
+    });
+  </script>
+</body>
+</html>
