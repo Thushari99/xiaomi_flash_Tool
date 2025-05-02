@@ -10,9 +10,17 @@ app.get('/', (req, res) => res.render('home'));
 app.get('/download', (req, res) => res.render('download'));
 app.get('/how-to-use', (req, res) => res.render('how-to-use'));
 app.get('/about', (req, res) => res.render('about'));
+// app.get('/downloadpro', (req, res) => res.render('downloadpro'));
+app.get('/downloadpro', (req, res) => res.render('downloadpro'));
+
+
+
+// const PORT = process.env.PORT || 3000;
+// app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
 
 const PORT = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
 
 
 
