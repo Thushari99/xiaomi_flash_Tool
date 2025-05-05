@@ -4,137 +4,204 @@
     <%- include('partials/header') %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            white: '#FFFFFF',
+            darkGray: '#333333',
+            orange: '#FF6A00',
+            lightGray: '#F7F7F7',
+            red: '#FF0000',
+            lightOrange: '#FF8533',
+            darkOrange: '#E56000',
+            mediumGray: '#666666',
+            veryLightGray: '#F0F0F0',
+            successGreen: '#22C55E',
+            warningYellow: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
+          },
+          spacing: {
+            'xs': '4px',
+            'sm': '8px',
+            'md': '16px',
+            'lg': '24px',
+            'xl': '32px',
+            'xxl': '48px',
+          },
+        }
+      }
+    }
+    </script>
+    <style type="text/css">
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F7F7F7;
+        color: #333333;
+      }
+      
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .tool-card {
+        transition: all 0.3s ease;
+      }
+      
+      .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(255, 106, 0, 0.1), 0 10px 10px -5px rgba(255, 106, 0, 0.04);
+      }
+
+      .gradient-border {
+        position: relative;
+        border-radius: 0.75rem;
+      }
+
+      .gradient-border::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 0.85rem;
+        background: linear-gradient(to right, white, white);
+        z-index: -1;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      .gradient-border:hover::before {
+        opacity: 1;
+      }
+    </style>
 </head>
-<body class="bg-white text-gray-800">
-    <!-- About Us Hero -->
-    <section class="bg-gray-100 min-h-[60vh] flex items-center justify-center text-orange-600 text-center relative py-28 px-4">
+<body class="bg-white text-darkGray">
+    <!-- About Hero Section -->
+        <section class="bg-gray-100 min-h-[60vh] flex items-center justify-center text-orange-600 text-center relative py-28 px-4">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,10,10,0.1)_0%,transparent_70%)] pointer-events-none"></div>
-        <div class="relative z-10 max-w-3xl mx-auto">
-            <h1 class="text-5xl font-bold mb-4">About DeviceFlash Pro</h1>
-            <p class="text-xl text-black">Leading the way in firmware flashing technology since 2020</p>
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange to-lightOrange bg-clip-text text-transparent">About Xiaomi Flash Tools</h1>
+            <p class="text-lg md:text-xl text-darkGray leading-relaxed">This website is dedicated to helping users safely and efficiently flash Xiaomi, Redmi, and POCO smartphones using official and trusted tools.</p>
         </div>
     </section>
 
-    <!-- Our Story -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="mb-12">
-                <h2 class="text-4xl font-bold mb-2">Our Story</h2>
-                <p class="text-gray-600">From a simple idea to the most trusted firmware flashing tool</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-10 items-center mt-10">
-                <div class="text-left">
-                    <p class="mb-6 text-lg leading-relaxed">DeviceFlash Pro started with a simple mission: to make firmware updates accessible and safe for everyone. What began as a small project has grown into a trusted solution used by millions worldwide.</p>
-                    <p class="text-lg leading-relaxed">Our team of dedicated developers and engineers work tirelessly to ensure DeviceFlash Pro remains at the cutting edge of firmware flashing technology, supporting the latest devices and providing the most reliable experience possible.</p>
-                </div>
-                <div class="rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Team working" class="w-full h-auto">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Values -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="mb-12">
-                <h2 class="text-4xl font-bold mb-2">Our Values</h2>
-                <p class="text-gray-600">The principles that guide everything we do</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow text-center hover:-translate-y-1 transition-transform">
-                    <div class="text-4xl text-orange-600 mb-4"><i class="fas fa-shield-alt"></i></div>
-                    <h3 class="text-xl font-semibold mb-2">Safety First</h3>
-                    <p>We prioritize the safety of your devices with robust error checking and fail-safes.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow text-center hover:-translate-y-1 transition-transform">
-                    <div class="text-4xl text-orange-600 mb-4"><i class="fas fa-users"></i></div>
-                    <h3 class="text-xl font-semibold mb-2">User-Focused</h3>
-                    <p>Every feature and update is designed with our users' needs in mind.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow text-center hover:-translate-y-1 transition-transform">
-                    <div class="text-4xl text-orange-600 mb-4"><i class="fas fa-rocket"></i></div>
-                    <h3 class="text-xl font-semibold mb-2">Innovation</h3>
-                    <p>We constantly push the boundaries of what's possible in firmware flashing.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow text-center hover:-translate-y-1 transition-transform">
-                    <div class="text-4xl text-orange-600 mb-4"><i class="fas fa-handshake"></i></div>
-                    <h3 class="text-xl font-semibold mb-2">Reliability</h3>
-                    <p>Our tools are thoroughly tested to ensure consistent performance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="mb-12">
-                <h2 class="text-4xl font-bold mb-2">Meet Our Team</h2>
-                <p class="text-gray-600">The people behind DeviceFlash Pro</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow">
-                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sarah Johnson" class="object-cover w-full h-full">
+    <!-- Tools Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-12 text-center fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">We provide access to:</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-sm tool-card gradient-border">
+                        <div class="text-4xl text-orange mb-6"><i class="fas fa-tools"></i></div>
+                        <h3 class="text-2xl font-semibold mb-4 text-orange">Mi Flash Tool</h3>
+                        <p class="text-mediumGray">Also known as MiFlash Tool, Xiaomi Mi Flash Tool, or Mi Flashing Tool – the official fastboot flashing tool for Qualcomm-based Xiaomi devices.</p>
                     </div>
-                    <h3 class="text-xl font-semibold">Sarah Johnson</h3>
-                    <p class="text-orange-600 font-medium">Lead Developer</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow">
-                        <img src="https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Michael Chen" class="object-cover w-full h-full">
+                    <div class="bg-white p-8 rounded-xl shadow-sm tool-card gradient-border">
+                        <div class="text-4xl text-orange mb-6"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="text-2xl font-semibold mb-4 text-orange">Mi Flash Pro Tool</h3>
+                        <p class="text-mediumGray">Also known as MiFlash Pro, Xiaomi Flash Pro, or Xiaomi Flash Tool Pro – an advanced Android flash tool for both Qualcomm and MediaTek devices, including built-in support for OTA and recovery flashing.</p>
                     </div>
-                    <h3 class="text-xl font-semibold">Michael Chen</h3>
-                    <p class="text-orange-600 font-medium">Security Expert</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow">
-                        <img src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Emily Rodriguez" class="object-cover w-full h-full">
-                    </div>
-                    <h3 class="text-xl font-semibold">Emily Rodriguez</h3>
-                    <p class="text-orange-600 font-medium">UX Designer</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievement Section -->
-    <section class="py-20 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="mb-12">
-                <h2 class="text-4xl font-bold mb-2">Our Achievements</h2>
-                <p class="text-gray-600">Milestones that mark our journey</p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow">
-                    <div class="text-4xl font-bold text-orange-600 mb-2">1M+</div>
-                    <p>Active Users</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow">
-                    <div class="text-4xl font-bold text-orange-600 mb-2">500+</div>
-                    <p>Supported Devices</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow">
-                    <div class="text-4xl font-bold text-orange-600 mb-2">99.9%</div>
-                    <p>Success Rate</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow">
-                    <div class="text-4xl font-bold text-orange-600 mb-2">24/7</div>
-                    <p>Support Available</p>
+    <!-- Download Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-r bg-lightGray">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Complete Flashing Solution</h2>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <p class="text-lg md:text-xl text-mediumGray leading-relaxed mb-8">Whether you're looking to download Mi Flash Tool, Mi Flash Pro, or the latest Smart Phone Flash Tool, this site offers verified downloads, simple usage guides, and all necessary drivers for successful MIUI flashing.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="/download" class="bg-orange hover:bg-darkOrange text-white px-6 py-3 rounded-lg transition-colors">
+                            <i class="fas fa-download mr-2"></i>Download Mi Flash Tool
+                        </a>
+                        <a href="/downloadpro" class="bg-orange hover:bg-darkOrange text-white px-6 py-3 rounded-lg transition-colors">
+                            <i class="fas fa-download mr-2"></i>Download Mi Flash Tool Pro
+                        </a>
+                        <a href="/how-to-use" class="bg-orange border-2 border-orange text-white hover:bg-orange hover:text-white px-6 py-3 rounded-lg transition-colors">
+                            <i class="fas fa-book mr-2"></i>View Guides
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact CTA -->
-    <section class="py-20 bg-white text-center">
-        <div class="max-w-xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-4">Want to Learn More?</h2>
-            <p class="text-gray-700 mb-6">Get in touch with our team to learn more about DeviceFlash Pro</p>
-            <a href="/contact" class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition">Contact Us</a>
+    <!-- Features Section -->
+    <section class="py-16 md:py-20 bg-lightGray">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-12 text-center fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">What We Offer</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm tool-card">
+                        <div class="text-3xl text-orange mb-4"><i class="fas fa-download"></i></div>
+                        <p class="text-lg text-darkGray">Official, up-to-date Xiaomi Flash Tool downloads</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm tool-card">
+                        <div class="text-3xl text-orange mb-4"><i class="fas fa-sync"></i></div>
+                        <p class="text-lg text-darkGray">Flashing tools for both Fastboot and Recovery methods</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm tool-card">
+                        <div class="text-3xl text-orange mb-4"><i class="fas fa-mobile-alt"></i></div>
+                        <p class="text-lg text-darkGray">Full compatibility across Xiaomi, Redmi, and POCO models</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm tool-card">
+                        <div class="text-3xl text-orange mb-4"><i class="fas fa-link"></i></div>
+                        <p class="text-lg text-darkGray">Safe, direct links for MiFlash download, Mi Flash Pro, and Xiaomi Flash EXE</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm tool-card">
+                        <div class="text-3xl text-orange mb-4"><i class="fas fa-book"></i></div>
+                        <p class="text-lg text-darkGray">Easy instructions for first-time users and advanced flashers</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Mission Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="mb-8 fade-in-section">
+                <h2 class="text-3xl font-bold mb-6">Our Goal</h2>
+                <p class="text-xl text-mediumGray leading-relaxed">Our goal is to make phone flash and MIUI ROM installation straightforward and accessible for anyone—no unnecessary tools, no clutter.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script for fade-in animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.fade-in-section');
+            
+            const fadeInOptions = {
+                threshold: 0.1
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        fadeInObserver.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            sections.forEach(section => {
+                fadeInObserver.observe(section);
+            });
+        });
+    </script>
 
     <%- include('partials/footer') %>
 </body>
