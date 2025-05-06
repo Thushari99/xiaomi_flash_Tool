@@ -10,7 +10,6 @@ app.get('/', (req, res) => res.render('home'));
 app.get('/download', (req, res) => res.render('download'));
 app.get('/how-to-use', (req, res) => res.render('how-to-use'));
 app.get('/about', (req, res) => res.render('about'));
-// app.get('/downloadpro', (req, res) => res.render('downloadpro'));
 app.get('/downloadpro', (req, res) => res.render('downloadpro'));
 
 
