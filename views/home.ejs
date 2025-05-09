@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Xiaomi Flash Tool – Official Download</title>
+  <meta name="description" content="Download Xiaomi Flash Tool & Mi Flash Pro to flash, recover, or unbrick your phone. Supports all Xiaomi, Redmi & POCO devices.">
   
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,6 +28,25 @@
           fontFamily: {
             sans: ['Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
           },
+          screens: {
+            'iphone-se': '375px',
+            'iphone-xr': '414px',
+            'iphone-12': '390px',
+            'iphone-14': '428px',
+            'pixel-7': '412px',
+            'galaxy-s8': '360px',
+            'galaxy-s20': '384px',
+            'ipad-mini': '768px',
+            'ipad-air': '820px',
+            'ipad-pro': '1024px',
+            'surface-pro': '912px',
+            'surface-duo': '540px',
+            'galaxy-fold': '280px',
+            'zenbook-fold': '800px',
+            'galaxy-a51': '412px',
+            'nest-hub': '1024px',
+            'nest-hub-max': '1280px',
+          },
           spacing: {
             'xs': '4px',
             'sm': '8px',
@@ -35,11 +55,87 @@
             'xl': '32px',
             'xxl': '48px',
           },
+          minHeight: {
+            'screen-75': '75vh',
+            'screen-85': '85vh',
+          },
+          maxWidth: {
+            'screen-xl': '1440px',
+          },
         }
       }
     }
   </script>
   
+  <style>
+    /* Base styles for stability */
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    body {
+      min-width: 280px; /* Support for Galaxy Fold */
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Prevent content shift */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Enhanced container stability */
+    .container {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Device-specific optimizations */
+    @media (max-width: 280px) {
+      .ultra-small-text { font-size: 0.7rem; }
+      .ultra-small-spacing { padding: 0.25rem; }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    /* Prevent layout shift during image load */
+    img {
+      aspect-ratio: attr(width) / attr(height);
+    }
+
+    /* Enhanced touch targets for mobile */
+    @media (hover: none) {
+      .touch-target {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.5rem;
+      }
+    }
+
+    /* Smooth animations */
+    .transition-all {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Prevent FOUC */
+    .no-fouc {
+      visibility: hidden;
+    }
+    
+    .fouc-ready {
+      visibility: visible;
+    }
+  </style>
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
@@ -49,269 +145,110 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="font-sans text-darkGray bg-white">
+<body class="font-sans text-darkGray bg-white no-fouc">
   <%- include('partials/header') %>
   
   <!-- Hero Section -->
-<!-- 
-  <section id="hero" class="relative min-h-screen flex items-center justify-center"> -->
+  <section id="hero" class="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Background Image + Dark Overlay -->
-    <!-- <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 z-0">
       <img 
-        src="/images/image5.jpg" 
+        src="/images/xiaomi-miui-15.jpg" 
         alt="Xiaomi Device Background" 
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-[#121212] bg-opacity-50"></div>
-    </div> -->
-  
+        class="w-full h-full  transform scale-105 animate-slow-zoom"
+        loading="eager"/>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#121212]/80 via-[#121212]/70 to-[#121212]/80"></div>
+    </div>
+
     <!-- Text Content -->
-    <!-- <div class="container relative z-10 text-center px-4">
-      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-        Reliable Xiaomi Flash Tools for <span class="text-[#FF8533]"> Every Device</span>
+    <div class="container relative z-10 text-center px-4 sm:px-6 lg:px-8 animate-fade-up">
+      <h1 class="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight fade-in-up">
+        Reliable Xiaomi Flash Tools 
+        <span class="text-lightOrange inline-block animate-pulse-subtle">For Every Device</span>
       </h1>
-      
-      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto backdrop-blur-sm p-4 rounded-lg">
-        Download Mi Flash Tool and Mi Flash Pro – the official Android flash tools trusted by developers and service professionals for fast, safe, and secure phone flashing.
+
+      <p class="text-sm xs:text-lg sm:text-xl md:text-xl text-white/90 max-w-3xl mx-auto backdrop-blur-sm p-3 sm:p-4 rounded-lg mb-6 sm:mb-8 leading-relaxed fade-in-up stagger-1">
+        Download Mi Flash Tool and Mi Flash Pro the official Android flash tools trusted by developers and service professionals for fast, safe, and secure phone flashing.
       </p>
     </div>
-  </section> -->
-
-  <!-- Hero Section -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Background Image + Dark Overlay -->
-  <div class="absolute inset-0 z-0">
-    <img 
-      src="/images/xiaomi-miui-15.jpg" 
-      alt="Xiaomi Device Background" 
-      class="w-full h-full object-cover transform scale-105 animate-slow-zoom"
-    />
-    <div class="absolute inset-0 bg-gradient-to-b from-[#121212]/70 via-[#121212]/60 to-[#121212]/70"></div>
-  </div>
-
-  <!-- Text Content -->
-  <div class="container relative z-10 text-center px-4 sm:px-6 lg:px-8 animate-fade-up">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-      Reliable Xiaomi Flash Tools for 
-      <span class="text-lightOrange inline-block animate-pulse-subtle">Every Device</span>
-    </h1>
-
-    <p class="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto backdrop-blur-sm p-4 rounded-lg mb-8 leading-relaxed">
-      Download Mi Flash Tool and Mi Flash Pro – the official Android flash tools trusted by developers and service professionals for fast, safe, and secure phone flashing.
-    </p>
-
-    </div>
-</section>
-
-  <!-- What Is Section -->
-  <!-- <section id="what-is" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
-        What is Xiaomi Flash Tool?
-        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
-      </h2>
-      <div class="flex flex-col md:flex-row gap-8 items-center">
-        <div class="md:w-1/2">
-          <p class="text-lg mb-4">Xiaomi Flash Tool is the official phone flashing software developed by Xiaomi for restoring, updating, and recovering MIUI firmware on Xiaomi, Redmi, and POCO devices.</p>
-          <p class="text-lg mb-4">Whether you're using the original Mi Flash Tool for Qualcomm devices or the advanced Mi Flash Pro for both Qualcomm and MediaTek phones, these tools offer a dependable way to perform fastboot, recovery, and EDL flashing .</p>
-          <p class="text-lg">This powerful Android flash tool helps unbrick your phone, reinstall MIUI, or downgrade/upgrade firmware manually. If you're looking for an all-in-one Xiaomi flash solution, Mi Flash Pro is the complete Xiaomi flashing tool designed for technicians, enthusiasts, and developers.</p>
-        </div>
-        <div class="md:w-1/2">
-            <img src="/images/mobile1.jpg" alt="Xiaomi Flash Tool Interface"
-            alt="Xiaomi Flash Tool Interface" 
-            class="w-full max-w-md   transition-transform duration-300 hover:scale-105 hover:shadow-xl"
-
-          >
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- <section id="what-is" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 relative">
-        What is Xiaomi Flash Tool?
-        <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-orange-400 rounded-full"></span>
-      </h2>
-  
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
-        
-        < Text Content -->
-        <!-- <div class="w-full md:w-1/2 text-center md:text-left">
-          <p class="text-base sm:text-lg mb-4">
-            Xiaomi Flash Tool is the official phone flashing software developed by Xiaomi for restoring, updating, and recovering MIUI firmware on Xiaomi, Redmi, and POCO devices.
-          </p>
-          <p class="text-base sm:text-lg mb-4">
-            Whether you're using the original Mi Flash Tool for Qualcomm devices or the advanced Mi Flash Pro for both Qualcomm and MediaTek phones, these tools offer a dependable way to perform fastboot, recovery, and EDL flashing.
-          </p>
-          <p class="text-base sm:text-lg">
-            This powerful Android flash tool helps unbrick your phone, reinstall MIUI, or downgrade/upgrade firmware manually. If you're looking for an all-in-one Xiaomi flash solution, Mi Flash Pro is the complete Xiaomi flashing tool designed for technicians, enthusiasts, and developers.
-          </p>
-        </div>
-   -->
-        <!-- Image -->
-
-        <!-- <div class="w-full md:w-1/2 flex justify-center">
-          <img
-            src="/images/image2.jpg"
-            alt="Xiaomi Flash Tool Interface"
-            class="w-full max-w-[10px] sm:max-w-[10px] md:max-w-[320px] lg:max-w-[360px] transition-transform duration-300 hover:scale-105 rounded-lg"
-          >
-        </div>
-        
-  
-      </div>
-    </div>
-  </section> --> 
-
-  <!-- <section id="what-is" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 relative">
-        What is Xiaomi Flash Tool?
-        <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-orange-400 rounded-full"></span>
-      </h2>
-  
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-10"> -->
-  
-        <!-- Text Content -->
-        <!-- <div class="w-full md:w-1/2 text-center md:text-left">
-          <p class="text-base sm:text-lg mb-4">
-            Xiaomi Flash Tool is the official phone flashing software developed by Xiaomi for restoring, updating, and recovering MIUI firmware on Xiaomi, Redmi, and POCO devices.
-          </p>
-          <p class="text-base sm:text-lg mb-4">
-            Whether you're using the original Mi Flash Tool for Qualcomm devices or the advanced Mi Flash Pro for both Qualcomm and MediaTek phones, these tools offer a dependable way to perform fastboot, recovery, and EDL flashing.
-          </p>
-          <p class="text-base sm:text-lg">
-            This powerful Android flash tool helps unbrick your phone, reinstall MIUI, or downgrade/upgrade firmware manually. If you're looking for an all-in-one Xiaomi flash solution, Mi Flash Pro is the complete Xiaomi flashing tool designed for technicians, enthusiasts, and developers.
-          </p>
-        </div> -->
-  
-        <!-- Image -->
-        <!-- <div class="w-full md:w-1/2 flex justify-center">
-          <img
-            src="/images/image2.jpg"
-            alt="Xiaomi Flash Tool Interface"
-            class="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[280px] transition-transform duration-300 hover:scale-105 rounded-lg"
-          >
-        </div>
-  
-      </div>
-    </div>
   </section>
-  
-   -->
-   
-   <!-- <section id="what-is" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 relative">
-        What is Xiaomi Flash Tool?
-        <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-orange-400 rounded-full"></span>
-      </h2>
-  
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-10"> -->
-  
-        <!-- Text Content -->
-        <!-- <div class="w-full md:w-1/2 text-center md:text-left">
-          <p class="text-base sm:text-lg mb-4">
-            Xiaomi Flash Tool is the official phone flashing software developed by Xiaomi for restoring, updating, and recovering MIUI firmware on Xiaomi, Redmi, and POCO devices.
-          </p>
-          <p class="text-base sm:text-lg mb-4">
-            Whether you're using the original Mi Flash Tool for Qualcomm devices or the advanced Mi Flash Pro for both Qualcomm and MediaTek phones, these tools offer a dependable way to perform fastboot, recovery, and EDL flashing.
-          </p>
-          <p class="text-base sm:text-lg">
-            This powerful Android flash tool helps unbrick your phone, reinstall MIUI, or downgrade/upgrade firmware manually. If you're looking for an all-in-one Xiaomi flash solution, Mi Flash Pro is the complete Xiaomi flashing tool designed for technicians, enthusiasts, and developers.
-          </p>
-        </div> -->
-  
-        <!-- Image -->
-        <!-- <div class="w-full md:w-1/2 flex justify-center">
-          <img
-            src="/images/image2.jpg"
-            alt="Xiaomi Flash Tool Interface"
-            class="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[280px] transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-lg"
-          >
-        </div>
-  
-      </div>
-    </div>
-  </section> -->
 
-  <section id="what-is" class="py-20 bg-white">
+  <section id="what-is" class="py-12 sm:py-16 md:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 relative">
+      <h2 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 relative">
         What is Xiaomi Flash Tool?
-        <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-orange-400 rounded-full"></span>
+        <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 sm:w-16 md:w-20 h-1 bg-orange-400 rounded-full"></span>
       </h2>
   
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8 md:gap-10">
         <!-- Text Content -->
         <div class="w-full md:w-1/2 text-center md:text-left">
-          <p class="text-base sm:text-lg mb-4">
+          <p class="text-xs xs:text-base sm:text-base mb-3 sm:mb-4">
             Xiaomi Flash Tool is the official phone flashing software developed by Xiaomi for restoring, updating, and recovering MIUI firmware on Xiaomi, Redmi, and POCO devices.
           </p>
-          <p class="text-base sm:text-lg mb-4">
+          <p class="text-xs xs:text-base sm:text-base mb-3 sm:mb-4">
             Whether you're using the original Mi Flash Tool for Qualcomm devices or the advanced Mi Flash Pro for both Qualcomm and MediaTek phones, these tools offer a dependable way to perform fastboot, recovery, and EDL flashing.
           </p>
-          <p class="text-base sm:text-lg">
-            This powerful Android flash tool helps unbrick your phone, reinstall MIUI, or downgrade/upgrade firmware manually. If you're looking for an all-in-one Xiaomi flash solution, Mi Flash Pro is the complete Xiaomi flashing tool designed for technicians, enthusiasts, and developers.
+          <p class="text-xs xs:text-base sm:text-base mb-3 sm:mb-4">
+            This powerful Android flash tool helps unbrick your phone, reinstall MIUI, or downgrade/upgrade firmware manually.If you're looking for an all-in-one Xiaomi flash solution, Mi Flash Pro is the complete Xiaomi flashing tool designed for technicians,  and developers.
           </p>
         </div>
   
         <!-- Image -->
         <div class="w-full md:w-1/2 flex justify-center">
-          <img
-            src="/images/mobile3.jpg"
-            alt="Xiaomi Flash Tool Interface"
-            class="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[470px] transition-transform duration-300 hover:scale-105 rounded-lg shadow-md"
-          />
+          <div class="image-container overflow-hidden rounded-lg shadow-md">
+            <img
+              src="/images/mobile3.jpg"
+              alt="Xiaomi Flash Tool Interface"
+              class="w-full max-w-[300px] xs:max-w-[240px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[400px] transition-transform duration-300 hover:scale-105 rounded-lg"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- Compatibility Section -->
-  <section id="compatibility" class="py-20 bg-lightGray">
+  <section id="compatibility" class="py-12 sm:py-16 md:py-20 bg-lightGray">
     <div class="container mx-auto px-4 text-center">
       <!-- Centered Title -->
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-darkGray relative">
+      <h2 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-darkGray relative">
         Device Compatibility
-        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+        <span class="absolute bottom-[-9px] left-1/2 transform -translate-x-1/2 w-12 sm:w-16 md:w-20 h-1 bg-lightOrange rounded-full"></span>
       </h2>
   
       <!-- Centered Description Paragraph -->
-      <p class="text-lg md:text-xl text-mediumGray max-w-3xl mx-auto mb-12">
+      <p class="text-sm sm:text-lg md:text-lg text-mediumGray max-w-3xl mx-auto mb-8 sm:mb-12">
         Mi Flash Tool and Mi Flash Pro are compatible with a wide range of Xiaomi smartphones. 
         Whether your phone runs on Qualcomm or MediaTek, our smart phone flash tools offer full support.
       </p>
   
       <!-- Centered Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-          <h3 class="text-2xl font-semibold text-darkGray mb-4">Xiaomi</h3>
-          <ul class="space-y-2">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <h3 class="text-lg sm:text-xl font-semibold text-darkGray mb-3 sm:mb-4">Xiaomi</h3>
+          <ul class="space-y-1 sm:space-y-2 text-sm sm:text-base">
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi 12 / 12 Pro / 12T</li>
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi Mi 11 / Mi 10 / Mi 9 / Mi 8</li>
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi Mi Mix 4 / Mix 3 / Mix 2S</li>
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Xiaomi Mi Note 10 / Note 3</li>
-           
           </ul>
         </div>
   
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-          <h3 class="text-2xl font-semibold text-darkGray mb-4">Redmi</h3>
-          <ul class="space-y-2">
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <h3 class="text-lg sm:text-xl font-semibold text-darkGray mb-3 sm:mb-4">Redmi</h3>
+          <ul class="space-y-1 sm:space-y-2 text-sm sm:text-base">
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi Note 13 / 12 / 11 / 10 / 9 series</li>
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi 13C / 12C / 10C</li>
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi K60 / K50 / K40 / K30</li>
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> Redmi 8 / 7 / 6 / 5 / 4 / 3</li>
-       
           </ul>
         </div>
   
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
-          <h3 class="text-2xl font-semibold text-darkGray mb-4">POCO</h3>
-          <ul class="space-y-2">
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 sm:col-span-2 md:col-span-1">
+          <h3 class="text-lg sm:text-xl font-semibold text-darkGray mb-3 sm:mb-4">POCO</h3>
+          <ul class="space-y-1 sm:space-y-2 text-sm sm:text-base">
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO X6 / X5 / X4 / X3</li>
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO F5 / F4 / F3</li>
             <li class="flex items-center"><span class="text-successGreen mr-2">✓</span> POCO M6 / M5 / M4 / M3</li>
@@ -323,70 +260,70 @@
   </section>
   
   <!-- Features Section -->
-  <section id="features" class="py-20 bg-white">
+  <section id="features" class="py-12 sm:py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
+      <h2 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 relative">
         Xiaomi Flash Tool Features
-        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-12 sm:w-16 md:w-20 h-1 bg-lightOrange rounded-full"></span>
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
-            <i class="fas fa-bolt text-white text-xl"></i>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div class="bg-lightGray rounded-xl p-4 sm:p-6 flex gap-3 sm:gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-bolt text-white text-base sm:text-xl"></i>
           </div>
           <div>
-            <h3 class="text-xl font-semibold mb-2">Fastboot ROM Flashing</h3>
-            <p class="text-mediumGray">Use Mi Flash Tool to flash Fastboot ROMs to any Qualcomm-based Xiaomi device.</p>
+            <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Fastboot ROM Flashing</h3>
+            <p class="text-sm sm:text-sm text-mediumGray">Use Mi Flash Tool to flash Fastboot ROMs to any Qualcomm-based Xiaomi device.</p>
           </div>
         </div>
         
-        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
-            <i class="fas fa-check-circle text-white text-xl"></i>
+        <div class="bg-lightGray rounded-xl p-4 sm:p-6 flex gap-3 sm:gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-check-circle text-white text-base sm:text-xl"></i>
           </div>
           <div>
-            <h3 class="text-xl font-semibold mb-2">Support for Qualcomm & MediaTek</h3>
-            <p class="text-mediumGray">Mi Flash Pro includes both Mi Flash Tool and SP Flash Tool, supporting all Xiaomi chipsets.</p>
+            <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Support for Qualcomm & MediaTek</h3>
+            <p class="text-sm sm:text-sm text-mediumGray">Mi Flash Pro includes both Mi Flash Tool and SP Flash Tool, supporting all Xiaomi chipsets.</p>
           </div>
         </div>
         
-        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
-            <i class="fas fa-undo text-white text-xl"></i>
+        <div class="bg-lightGray rounded-xl p-4 sm:p-6 flex gap-3 sm:gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-undo text-white text-base sm:text-xl"></i>
           </div>
           <div>
-            <h3 class="text-xl font-semibold mb-2">Recovery & OTA Flashing</h3>
-            <p class="text-mediumGray">Flash recovery images and OTA updates directly using Mi Flash Pro's Recovery Mode.</p>
+            <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Recovery & OTA Flashing</h3>
+            <p class="text-sm sm:text-sm text-mediumGray">Flash recovery images and OTA updates directly using Mi Flash Pro's Recovery Mode.</p>
           </div>
         </div>
         
-        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
-            <i class="fas fa-user-shield text-white text-xl"></i>
+        <div class="bg-lightGray rounded-xl p-4 sm:p-6 flex gap-3 sm:gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-user-shield text-white text-base sm:text-xl"></i>
           </div>
           <div>
-            <h3 class="text-xl font-semibold mb-2">Built-in USB Drivers</h3>
-            <p class="text-mediumGray">No need to install separate drivers. Our flash tools include all necessary USB drivers.</p>
+            <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Built-in USB Drivers</h3>
+            <p class="text-sm sm:text-sm text-mediumGray">No need to install separate drivers. Our flash tools include all necessary USB drivers.</p>
           </div>
         </div>
         
-        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
-            <i class="fas fa-desktop text-white text-xl"></i>
+        <div class="bg-lightGray rounded-xl p-4 sm:p-6 flex gap-3 sm:gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-desktop text-white text-base sm:text-xl"></i>
           </div>
           <div>
-            <h3 class="text-xl font-semibold mb-2">Download Firmware Inside the Tool</h3>
-            <p class="text-mediumGray">Mi Flash Pro allows you to search and download official MIUI firmware from within the tool.</p>
+            <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">Download Firmware Inside the Tool</h3>
+            <p class="text-sm sm:text-sm text-mediumGray">Mi Flash Pro allows you to search and download official MIUI firmware from within the tool.</p>
           </div>
         </div>
         
-        <div class="bg-lightGray rounded-xl p-6 flex gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-12 h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
-            <i class="fas fa-terminal text-white text-xl"></i>
+        <div class="bg-lightGray rounded-xl p-4 sm:p-6 flex gap-3 sm:gap-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-terminal text-white text-base sm:text-xl"></i>
           </div>
           <div>
-            <h3 class="text-xl font-semibold mb-2">One-Click Flashing Interface</h3>
-            <p class="text-mediumGray">The phone flash process is streamlined with intuitive buttons and flashing modes.</p>
+            <h3 class="text-base sm:text-lg font-semibold mb-1 sm:mb-2">One-Click Flashing Interface</h3>
+            <p class="text-sm sm:text-sm text-mediumGray">The phone flash process is streamlined with intuitive buttons and flashing modes.</p>
           </div>
         </div>
       </div>
@@ -394,51 +331,51 @@
   </section>
   
   <!-- How To Use Section -->
-  <section id="how-to-use" class="py-20 bg-lightGray">
+  <section id="how-to-use" class="py-12 sm:py-16 md:py-20 bg-lightGray">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
+      <h2 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 relative">
         How To Use
-        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-12 sm:w-16 md:w-20 h-1 bg-lightOrange rounded-full"></span>
       </h2>
   
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="download-cloud" class="text-lightOrange"></i>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
+        <div class="bg-white p-4 sm:p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+            <i data-lucide="download-cloud" class="text-lightOrange w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Download & Install</h3>
-          <p class="text-mediumGray">Download the tool and follow our simple installation instructions.</p>
+          <h3 class="text-lg sm:text-lg font-semibold mb-1 sm:mb-2">Download & Install</h3>
+          <p class="text-sm sm:text-base text-mediumGray">Download the tool and follow our simple installation instructions.</p>
         </div>
   
-        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="monitor" class="text-lightOrange"></i>
+        <div class="bg-white p-4 sm:p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+            <i data-lucide="monitor" class="text-lightOrange w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Connect Device</h3>
-          <p class="text-mediumGray">Connect your Xiaomi device via USB and enable USB debugging.</p>
+          <h3 class="text-lg sm:text-lg font-semibold mb-1 sm:mb-2">Connect Device</h3>
+          <p class="text-sm sm:text-base text-mediumGray">Connect your Xiaomi device via USB and enable USB debugging.</p>
         </div>
   
-        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="smartphone" class="text-lightOrange"></i>
+        <div class="bg-white p-4 sm:p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+            <i data-lucide="smartphone" class="text-lightOrange w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Select Firmware</h3>
-          <p class="text-mediumGray">Choose the correct firmware package for your specific device model.</p>
+          <h3 class="text-lg sm:text-lg font-semibold mb-1 sm:mb-2">Select Firmware</h3>
+          <p class="text-sm sm:text-base text-mediumGray">Choose the correct firmware package for your specific device model.</p>
         </div>
   
-        <div class="bg-white p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div class="w-16 h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-4">
-            <i data-lucide="check-circle" class="text-lightOrange"></i>
+        <div class="bg-white p-4 sm:p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 bg-lightGray rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+            <i data-lucide="check-circle" class="text-lightOrange w-5 h-5 sm:w-6 sm:h-6"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Flash & Verify</h3>
-          <p class="text-mediumGray">Start the flashing process and wait for verification to complete.</p>
+          <h3 class="text-lg sm:text-lg font-semibold mb-1 sm:mb-2">Flash & Verify</h3>
+          <p class="text-sm sm:text-base text-mediumGray">Start the flashing process and wait for verification to complete.</p>
         </div>
       </div>
   
       <div class="text-center">
-        <p class="text-lg mb-4">Want detailed instructions with screenshots and troubleshooting tips?</p>
-        <a href="/how-to-use" class="inline-flex items-center justify-center gap-2 bg-lightOrange hover:bg-darkOrange text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300">
-          View Complete Guide <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        <p class="text-base sm:text-base mb-3 sm:mb-4">Want detailed instructions with screenshots and troubleshooting tips?</p>
+        <a href="/how-to-use" class="touch-target inline-flex items-center justify-center gap-1 sm:gap-2 bg-lightOrange hover:bg-darkOrange text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-all duration-300">
+          View Complete Guide <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         </a>
       </div>
     </div>
@@ -446,143 +383,142 @@
   
 
   <!-- Download Section -->
-<section id="download" class="py-20 bg-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
-      Download Xiaomi Flash Tool
-      <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
-    </h2>
-    
-    <div class="max-w-5xl mx-auto bg-lightGray rounded-2xl p-8 shadow-md">
-      <p class="text-lg text-center mb-10">Choose the right Xiaomi flash tool for your needs. Download Mi Flash Tool for Qualcomm-only devices or Mi Flash Pro for a more advanced, all-in-one solution that works across all Xiaomi models. Whether you're searching for "mi flash download", "miflash tool", or simply a safe "phone flashing software", you've come to the right place.</p>
+  <section id="download" class="py-12 sm:py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 relative">
+        Download Xiaomi Flash Tool
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-12 sm:w-16 md:w-20 h-1 bg-lightOrange rounded-full"></span>
+      </h2>
+      
+      <div class="max-w-5xl mx-auto bg-lightGray rounded-2xl p-4 sm:p-6 md:p-8 shadow-md">
+        <p class="text-xs sm:text-base text-center mb-6 sm:mb-10">Choose the right Xiaomi flash tool for your needs. Download Mi Flash Tool for Qualcomm-only devices or Mi Flash Pro for a more advanced,all-in-one solution that works across all Xiaomi models. Whether you're searching for "mi flash download","miflash tool", or simply a safe "phone flashing software" you've come to the right place.</p>
 
-      <!-- Centered Grid Container -->
-      <div class="flex justify-center mb-12">
-       
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full px-4 md:px-8 lg:px-16">
-
-          <!-- Windows Card -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div class="bg-lightOrange p-4">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full flex items-center justify-center">
-                  <img src="https://img.icons8.com/fluency/28/windows-10.png" alt="Windows" class="w-7 h-7" />
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold">Download Mi Flash Tool </h3>
-                  <p class="text-sm text-mediumGray">Official Xiaomi Fastboot flasher for Qualcomm devices.</p>
+        <!-- Centered Grid Container -->
+        <div class="flex justify-center mb-8 sm:mb-12">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full px-2 sm:px-4 md:px-8 lg:px-16">
+            <!-- Windows Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="bg-lightOrange p-3 sm:p-4">
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <div class="bg-lightGray p-sm md:p-md rounded-full mr-sm md:mr-md">
+                    <img src="https://img.icons8.com/fluency/28/windows-10.png" alt="Windows" class="w-6 h-6 sm:w-7 sm:h-7" />
+                  </div>
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-bold">Download Mi Flash Tool </h3>
+                    <p class="text-xs sm:text-sm text-Gray">Official Xiaomi Fastboot flasher for Qualcomm devices.</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="p-5">
-              <ul class="text-sm space-y-2 mb-6">
-                <li class="flex items-start">
-                  <span class="text-lightOrange mr-2">📄</span> Version 3.6.0
-                </li>
-                <li class="flex items-start">
-                  <span class="text-lightOrange mr-2">📅</span> Released: May 10, 2025
-                </li>
-                <li class="flex items-start">
-                  <span class="text-lightOrange mr-2">💾</span> Size: 45.8 MB
-                </li>
-              </ul>
-              <a href="/download" class="block w-full text-center bg-lightOrange hover:bg-darkOrange text-white font-semibold py-2.5 rounded-lg transition-colors duration-300">
-                Download Mi Flash Tool
-              </a>
-            </div>
-          </div>
-
-          <!-- windows Pro Card -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div class="bg-lightOrange p-4">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full flex items-center justify-center">
-                  <img src="https://img.icons8.com/fluency/28/windows-10.png" alt="Windows" class="w-7 h-7" />
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold">Download Mi Flash Pro</h3>
-                  <p class="text-sm text-mediumGray">Xiaomi's complete Android flash tool with support for all devices.</p>
-                </div>
+              <div class="p-3 sm:p-5">
+                <ul class="text-xs sm:text-sm space-y-1 sm:space-y-2 mb-4 sm:mb-6">
+                  <li class="flex items-start">
+                    <span class="text-lightOrange mr-2">📄</span> Version 3.6.0
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-lightOrange mr-2">📅</span> Released: May 10, 2025
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-lightOrange mr-2">💾</span> Size: 45.8 MB
+                  </li>
+                </ul>
+                <a href="/download" class="touch-target block w-full text-center bg-lightOrange hover:bg-darkOrange text-white font-semibold py-2 sm:py-2.5 rounded-lg transition-colors duration-300">
+                  Download Mi Flash Tool
+                </a>
               </div>
             </div>
-            <div class="p-5">
-              <ul class="text-sm space-y-2 mb-6">
-                <li class="flex items-start">
-                  <span class="text-lightOrange mr-2">📄</span> Version 3.6.0
-                </li>
-                <li class="flex items-start">
-                  <span class="text-lightOrange mr-2">📅</span> Released: May 10, 2025
-                </li>
-                <li class="flex items-start">
-                  <span class="text-lightOrange mr-2">💾</span> Size: 48.2 MB
-                </li>
-              </ul>
-              <a href="/downloadpro" class="block w-full text-center bg-lightOrange hover:bg-darkOrange text-white font-semibold py-2.5 rounded-lg transition-colors duration-300">
-                Download Mi Flash Pro
-              </a>
+
+            <!-- Windows Pro Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="bg-lightOrange p-3 sm:p-4">
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <div class="bg-lightGray p-sm md:p-md rounded-full mr-sm md:mr-md">
+                    <img src="https://img.icons8.com/fluency/28/windows-10.png" alt="Windows" class="w-6 h-6 sm:w-7 sm:h-7" />
+                  </div>
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-bold">Download Mi Flash Pro</h3>
+                    <p class="text-xs sm:text-sm text-Gray">Xiaomi's complete Android flash tool with support for all devices.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 sm:p-5">
+                <ul class="text-xs sm:text-sm space-y-1 sm:space-y-2 mb-4 sm:mb-6">
+                  <li class="flex items-start">
+                    <span class="text-lightOrange mr-2">📄</span> Version 3.6.0
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-lightOrange mr-2">📅</span> Released: May 10, 2025
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-lightOrange mr-2">💾</span> Size: 48.2 MB
+                  </li>
+                </ul>
+                <a href="/downloadpro" class="touch-target block w-full text-center bg-lightOrange hover:bg-darkOrange text-white font-semibold py-2 sm:py-2.5 rounded-lg transition-colors duration-300">
+                  Download Mi Flash Pro
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-</section>
+    </div>
+  </section>
 
   <!-- Installation Section -->
-  <section class="py-20 bg-lightGray">
+  <section class="py-12 sm:py-20 md:py-8 bg-lightGray">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 relative">
+      <h2 class="text-xl xs:text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 relative">
         Installation Guidelines
-        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-12 sm:w-16 md:w-20 h-1 bg-lightOrange rounded-full"></span>
       </h2>
       
       <div class="max-w-3xl mx-auto">
-        <div class="space-y-6 mb-12">
-          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
-            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">1</div>
-            <div>
-              <h3 class="text-xl font-semibold mb-1">Download the Tool</h3>
-              <p class="text-mediumGray">Get the latest version of Xiaomi Flash Tool from our official website</p>
+        <div class="space-y-3 sm:space-y-6 mb-8 sm:mb-12">
+          <div class="flex items-start gap-2 sm:gap-4 bg-white p-3 sm:p-6 rounded-xl shadow-md">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm sm:text-base">1</div>
+            <div class="pt-0.5">
+              <h3 class="text-base sm:text-lg font-semibold mb-0.5 sm:mb-1">Download the Tool</h3>
+              <p class="text-xs sm:text-base text-mediumGray">Get the latest version of Xiaomi Flash Tool from our official website</p>
             </div>
           </div>
           
-          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
-            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">2</div>
-            <div>
-              <h3 class="text-xl font-semibold mb-1">Extract the Package</h3>
-              <p class="text-mediumGray">Unzip the downloaded file to a location on your computer</p>
+          <div class="flex items-start gap-2 sm:gap-4 bg-white p-3 sm:p-6 rounded-xl shadow-md">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm sm:text-base">2</div>
+            <div class="pt-0.5">
+              <h3 class="text-base sm:text-lg font-semibold mb-0.5 sm:mb-1">Extract the Package</h3>
+              <p class="text-xs sm:text-base text-mediumGray">Unzip the downloaded file to a location on your computer</p>
             </div>
           </div>
           
-          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
-            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">3</div>
-            <div>
-              <h3 class="text-xl font-semibold mb-1">Install Drivers</h3>
-              <p class="text-mediumGray">Run the included driver installer or download Xiaomi USB drivers separately if needed</p>
+          <div class="flex items-start gap-2 sm:gap-4 bg-white p-3 sm:p-6 rounded-xl shadow-md">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm sm:text-base">3</div>
+            <div class="pt-0.5">
+              <h3 class="text-base sm:text-lg font-semibold mb-0.5 sm:mb-1">Install Drivers</h3>
+              <p class="text-xs sm:text-base text-mediumGray">Run the included driver installer or download Xiaomi USB drivers separately if needed</p>
             </div>
           </div>
           
-          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
-            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">4</div>
-            <div>
-              <h3 class="text-xl font-semibold mb-1">Run as Administrator</h3>
-              <p class="text-mediumGray">Right-click on MiFlash.exe and select "Run as administrator"</p>
+          <div class="flex items-start gap-2 sm:gap-4 bg-white p-3 sm:p-6 rounded-xl shadow-md">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm sm:text-base">4</div>
+            <div class="pt-0.5">
+              <h3 class="text-base sm:text-lg font-semibold mb-0.5 sm:mb-1">Run as Administrator</h3>
+              <p class="text-xs sm:text-base text-mediumGray">Right-click on MiFlash.exe and select "Run as administrator"</p>
             </div>
           </div>
           
-          <div class="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md">
-            <div class="w-10 h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">5</div>
-            <div>
-              <h3 class="text-xl font-semibold mb-1">Connect Your Device</h3>
-              <p class="text-mediumGray">Put your device in Fastboot mode and connect it to your computer via USB</p>
+          <div class="flex items-start gap-2 sm:gap-4 bg-white p-3 sm:p-6 rounded-xl shadow-md">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-lightOrange rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm sm:text-base">5</div>
+            <div class="pt-0.5">
+              <h3 class="text-base sm:text-lg font-semibold mb-0.5 sm:mb-1">Connect Your Device</h3>
+              <p class="text-xs sm:text-base text-mediumGray">Put your device in Fastboot mode and connect it to your computer via USB</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl flex items-start gap-4">
-          <i class="fas fa-exclamation-triangle text-red-500 text-2xl flex-shrink-0 mt-1"></i>
+        <div class="bg-red-50 border-l-4 border-red-500 p-3 sm:p-6 rounded-r-xl flex items-start gap-2 sm:gap-4">
+          <i class="fas fa-exclamation-triangle text-red-500 text-lg sm:text-2xl flex-shrink-0 mt-0.5 sm:mt-1"></i>
           <div>
-            <h3 class="text-xl font-semibold text-red-500 mb-2">Important Notice</h3>
-            <p class="text-mediumGray">Always back up your data before flashing your device. The flashing process will erase all data on your device unless you specifically select the "Save User Data" option.</p>
+            <h3 class="text-base sm:text-lg font-semibold text-red-500 mb-1 sm:mb-2">Important Notice</h3>
+            <p class="text-xs sm:text-base text-mediumGray">Always back up your data before flashing your device. The flashing process will erase all data on your device unless you specifically select the "Save User Data" option.</p>
           </div>
         </div>
       </div>
@@ -590,84 +526,86 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="py-20 bg-lightGray">
+
+    <section id="faq" class="py-1 sm:py-12 md:py-12 bg-lightGray mb-6 sm:mb-10">
+
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 relative">
+      <h2 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-12 relative">
         Frequently Asked Questions
-        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-lightOrange rounded-full"></span>
+        <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-12 sm:w-16 md:w-20 h-1 bg-lightOrange rounded-full"></span>
       </h2>
       
       <div class="max-w-3xl mx-auto">
-        <div class="space-y-4">
+        <div class="space-y-2 sm:space-y-4">
           <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+            <button class="accordion-toggle touch-target w-full flex justify-between items-center p-3 sm:p-5 text-left font-semibold text-xs sm:text-base focus:outline-none">
               What is Mi Flash Tool?
               <i class="fas fa-chevron-down transition-transform duration-300"></i>
             </button>
             <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
-              <div class="p-5 pt-0 text-mediumGray">
-                <p>It's an official Xiaomi flashing tool for installing MIUI firmware on Qualcomm-based devices.</p>
+              <div class="p-3 sm:p-5 pt-0 text-mediumGray">
+                <p class="text-xs sm:text-base">It's an official Xiaomi flashing tool for installing MIUI firmware on Qualcomm-based devices.</p>
               </div>
             </div>
           </div>
           
           <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+            <button class="accordion-toggle touch-target w-full flex justify-between items-center p-3 sm:p-5 text-left font-semibold text-xs sm:text-base focus:outline-none">
               What is Mi Flash Pro?
               <i class="fas fa-chevron-down transition-transform duration-300"></i>
             </button>
             <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
-              <div class="p-5 pt-0 text-mediumGray">
-                <p>Mi Flash Pro is a powerful smart phone flash tool that supports both Qualcomm and MediaTek devices and allows flashing via Fastboot and Recovery.</p>
+              <div class="p-3 sm:p-5 pt-0 text-mediumGray">
+                <p class="text-xs sm:text-base">Mi Flash Pro is a powerful smart phone flash tool that supports both Qualcomm and MediaTek devices and allows flashing via Fastboot and Recovery.</p>
               </div>
             </div>
           </div>
           
           <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+            <button class="accordion-toggle touch-target w-full flex justify-between items-center p-3 sm:p-5 text-left font-semibold text-xs sm:text-base focus:outline-none">
               Can I use these tools on POCO and Redmi phones?
               <i class="fas fa-chevron-down transition-transform duration-300"></i>
             </button>
             <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
-              <div class="p-5 pt-0 text-mediumGray">
-                <p>Yes. Both Mi Flash Tool and Mi Flash Pro support Xiaomi, Redmi, and POCO phones.</p>
+              <div class="p-3 sm:p-5 pt-0 text-mediumGray">
+                <p class="text-xs sm:text-base">Yes. Both Mi Flash Tool and Mi Flash Pro support Xiaomi, Redmi, and POCO phones.</p>
               </div>
             </div>
           </div>
 
           <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+            <button class="accordion-toggle touch-target w-full flex justify-between items-center p-3 sm:p-5 text-left font-semibold text-xs sm:text-base focus:outline-none">
               Is it safe to use Mi Flash Tools?
               <i class="fas fa-chevron-down transition-transform duration-300"></i>
             </button>
             <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
-              <div class="p-5 pt-0 text-mediumGray">
-                <p>Yes, as long as you download from official sources and follow flashing instructions.</p>
+              <div class="p-3 sm:p-5 pt-0 text-mediumGray">
+                <p class="text-xs sm:text-base">Yes, as long as you download from official sources and follow flashing instructions.</p>
               </div>
             </div>
           </div>
 
               
           <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+            <button class="accordion-toggle touch-target w-full flex justify-between items-center p-3 sm:p-5 text-left font-semibold text-xs sm:text-base focus:outline-none">
               Do I need to unlock my bootloader?
               <i class="fas fa-chevron-down transition-transform duration-300"></i>
             </button>
             <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
-              <div class="p-5 pt-0 text-mediumGray">
-                <p>For fastboot flashing, yes. For some recovery-based flashing, Mi Flash Pro may work without unlocking.</p>
+              <div class="p-3 sm:p-5 pt-0 text-mediumGray">
+                <p class="text-xs sm:text-base">For fastboot flashing, yes. For some recovery-based flashing, Mi Flash Pro may work without unlocking.</p>
               </div>
             </div>
           </div>
           
           <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <button class="accordion-toggle w-full flex justify-between items-center p-5 text-left font-semibold text-lg focus:outline-none">
+            <button class="accordion-toggle touch-target w-full flex justify-between items-center p-3 sm:p-5 text-left font-semibold text-xs sm:text-base focus:outline-none">
               Where can I download Xiaomi flash tool exe files?
               <i class="fas fa-chevron-down transition-transform duration-300"></i>
             </button>
             <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
-              <div class="p-5 pt-0 text-mediumGray">
-                <p>From our Download and DownloadPro pages or official mirrors listed above.</p>
+              <div class="p-3 sm:p-5 pt-0 text-mediumGray">
+                <p class="text-xs sm:text-base">From our Download and DownloadPro pages or official mirrors listed above.</p>
               </div>
             </div>
           </div>
@@ -675,6 +613,8 @@
       </div>
     </div>
   </section>
+
+
 
   <%- include('partials/footer') %>
 
@@ -685,13 +625,48 @@
 
   <!-- Main JavaScript -->
   <script>
-   
-    // Accordion functionality for FAQ section
+    // Prevent FOUC
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('fouc-ready');
+    });
+
+    // Prevent content jumping
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
+    });
+
+    // Smooth scroll handling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Responsive image loading
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('img[data-src]');
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            observer.unobserve(img);
+          }
+        });
+      });
+
+      images.forEach(img => imageObserver.observe(img));
+    });
+
+    // Accordion functionality for FAQ section with improved animation
     const accordionToggles = document.querySelectorAll('.accordion-toggle');
     
     accordionToggles.forEach(toggle => {
       toggle.addEventListener('click', () => {
-        const item = toggle.parentElement;
         const content = toggle.nextElementSibling;
         const icon = toggle.querySelector('i');
         
@@ -708,7 +683,7 @@
           }
         });
         
-        // Toggle current item
+        // Toggle current item with improved animation
         if (content.style.maxHeight) {
           content.style.maxHeight = null;
           icon.classList.remove('rotate-180');
@@ -719,29 +694,35 @@
       });
     });
 
-    // Add animation classes
-    document.head.insertAdjacentHTML('beforeend', `
-      <style>
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+    // Detect device type for better interactions
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    // Enhance scroll animations with IntersectionObserver
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+    
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          fadeObserver.unobserve(entry.target);
         }
-        
-        .animate-fade-in {
-          animation: fadeIn 0.6s ease forwards;
-        }
-        
-        .animate-fade-in-delayed {
-          animation: fadeIn 0.6s ease 0.2s forwards;
-          opacity: 0;
-        }
-        
-        .animate-fade-in-delayed-2 {
-          animation: fadeIn 0.6s ease 0.4s forwards;
-          opacity: 0;
-        }
-      </style>
-    `);
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    fadeElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      fadeObserver.observe(el);
+    });
+    
+    // Detect and optimize for foldable devices
+    if (window.screen && window.screen.availWidth <= 300) {
+      document.documentElement.classList.add('ultra-small-device');
+    }
   </script>
 </body>
 </html>

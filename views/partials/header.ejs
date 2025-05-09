@@ -4,26 +4,28 @@
     <title>Xiaomi Flash Tool</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head> 
-  <body class="pt-15">
+  <body class="pt-15"> 
   
-    <!-- Fixed Header -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
-      <div class="container mx-auto px-2 py-4 flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <img src="/images/xioami_logo.png" alt="Xiaomi Flash Tool Logo" class="h-8 w-auto">
-          <span class="text-xl font-semibold text-gray-800">Xiaomi Flash Tool</span>
+     <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow transition-all duration-300">
+      <div class="container mx-auto px-1 py-1 md:px-6 md:py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center space-x-1 md:space-x-3">
+            <img src="/images/xioami_logo.png" alt="Xiaomi Flash Tool Logo" class="h-4 w-auto md:h-8">
+            <span class="text-[7px] font-semibold text-gray-800 md:text-lg">Xiaomi Flash Tool</span>
+          </div>
+          
+          <!-- Navigation (Horizontal for all screens) -->
+          <!-- <nav class="overflow-x-auto nav-scroll -mr-2"> -->
+            <ul class="flex space-x-1 md:space-x-6 text-gray-700 text-[7px] md:text-base  font-medium whitespace-nowrap px-1">
+              <li><a href="/" class="px-1 py-1 hover:text-orange-500 transition-colors">Home</a></li>
+              <li><a href="/download" class="px-1 py-1 hover:text-orange-500 transition-colors">Download</a></li>
+              <li><a href="/downloadpro" class="px-1 py-1 hover:text-orange-500 transition-colors">DownloadPro</a></li>
+              <li><a href="/how-to-use" class="px-1 py-1 hover:text-orange-500 transition-colors">How to Use</a></li>
+              <li><a href="/about" class="px-1 py-1 hover:text-orange-500 transition-colors">About</a></li>
+            </ul>
+          </nav>
         </div>
-        
-        <nav>
-          <ul class="flex space-x-6 text-gray-700 font-medium">
-            <li><a href="/" class="hover:text-orange-500">Home</a></li>
-            <li><a href="/download" class="hover:text-orange-500">Download</a></li>
-            <li><a href="/downloadpro" class="hover:text-orange-500">DownloadPro</a></li>
-            <li><a href="/how-to-use" class="hover:text-orange-500">How to Use</a></li>
-            <li><a href="/about" class="hover:text-orange-500">About</a></li>
-              
-
-          </ul>
-        </nav>
       </div>
     </header>
