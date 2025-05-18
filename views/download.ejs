@@ -9,6 +9,7 @@
   
   <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+   <script src="/js/tailwind-downloadconfig.js"></script>
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,116 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            white: '#FFFFFF',
-            darkGray: '#333333',
-            orange: '#FF6A00',
-            lightGray: '#F7F7F7',
-            red: '#FF0000',
-            lightOrange: '#FF8533',
-            darkOrange: '#E56000',
-            mediumGray: '#666666',
-            veryLightGray: '#F0F0F0',
-            successGreen: '#22C55E',
-            warningYellow: '#F59E0B',
-          },
-          fontFamily: {
-            sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
-          },
-          spacing: {
-            'xs': '4px',
-            'sm': '8px',
-            'md': '16px',
-            'lg': '24px',
-            'xl': '32px',
-            'xxl': '48px',
-          },
-          minHeight: {
-            'screen-without-footer': 'calc(100vh - 300px)', // Adjust 300px based on your footer height
-          }
-        }
-      }
-    }
-  </script>
-  
-  <style type="text/css">
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #F7F7F7;
-      color: #333333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    
-    main {
-      flex: 1 0 auto;
-    }
-    
-    footer {
-      flex-shrink: 0;
-    }
-    
-    .tab-content {
-      display: none;
-    }
-    
-    .tab-content.active {
-      display: block;
-    }
-    
-    /* Animation for card hover */
-    .download-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .download-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    
-    /* Pulse animation for download buttons */
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.8;
-      }
-    }
-    
-    .download-btn:hover {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    
-    /* Mobile optimizations */
-    @media (max-width: 640px) {
-      .container {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-    }
-
-    /* Full-width section styles */
-    .full-width-section {
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-      padding-left: 0;
-      padding-right: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="css/downloadtyle.css">
 </head>
 
 <body class="min-h-screen flex flex-col">
@@ -624,133 +516,11 @@
     </section>
   </main>
 
-  <!-- Footer -->
+
+  <script src="/js/download.js"></script>
+
+   <!-- Footer -->
   <%- include('partials/footer') %>
 
-  <script>
-    // Tab Functionality
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabButtons = document.querySelectorAll('.tab-button');
-      const tabContents = document.querySelectorAll('.tab-content');
-
-      if (tabButtons.length > 0 && tabContents.length > 0) {
-        tabButtons.forEach(button => {
-          button.addEventListener('click', () => {
-            // Remove active class from all buttons and contents
-            tabButtons.forEach(btn => {
-              btn.classList.remove('active');
-              btn.classList.remove('text-orange');
-              btn.classList.add('text-darkGray');
-            });
-            
-            tabContents.forEach(content => {
-              content.classList.remove('active');
-            });
-
-            // Add active class to clicked button and corresponding content
-            button.classList.add('active');
-            button.classList.add('text-orange');
-            button.classList.remove('text-darkGray');
-            
-            const target = button.getAttribute('data-tab');
-            document.getElementById(target).classList.add('active');
-          });
-        });
-        
-        // Add styling to active tab if it exists
-        const activeTab = document.querySelector('.tab-button.active');
-        if (activeTab) {
-          activeTab.classList.add('text-orange');
-          activeTab.classList.remove('text-darkGray');
-        }
-      }
-
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-      
-      // Add scroll animation for download cards
-      const animateOnScroll = () => {
-        const cards = document.querySelectorAll('.download-card');
-        
-        cards.forEach(card => {
-          const cardTop = card.getBoundingClientRect().top;
-          const triggerBottom = window.innerHeight * 0.8;
-          
-          if (cardTop < triggerBottom) {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }
-        });
-        
-        // Add fade-in effect for sections
-        document.querySelectorAll('.fade-in-section').forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top;
-          if (sectionTop < window.innerHeight * 0.8) {
-            section.classList.add('fade-in');
-          }
-        });
-      };
-      
-      // Set initial styles for animation
-      document.querySelectorAll('.download-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      });
-      
-      // Run once on load
-      window.addEventListener('load', animateOnScroll);
-      
-      // Run on scroll
-      window.addEventListener('scroll', animateOnScroll);
-
-      // Accordion functionality for FAQ section
-      const accordionToggles = document.querySelectorAll('.accordion-toggle');
-      
-      accordionToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          const content = toggle.nextElementSibling;
-          const icon = toggle.querySelector('i');
-          
-          // Close all accordion items
-          document.querySelectorAll('.accordion-content').forEach(c => {
-            if (c !== content) {
-              c.style.maxHeight = null;
-            }
-          });
-          
-          document.querySelectorAll('.accordion-toggle i').forEach(i => {
-            if (i !== icon) {
-              i.classList.remove('rotate-180');
-            }
-          });
-          
-          // Toggle current item
-          if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-            icon.classList.remove('rotate-180');
-          } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-            icon.classList.add('rotate-180');
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>

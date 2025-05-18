@@ -1,0 +1,68 @@
+/* style.css */
+
+/* Base styles for stability */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 280px; /* Support for Galaxy Fold */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Prevent content shift */
+* {
+  box-sizing: border-box;
+}
+
+/* Enhanced container stability */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Device-specific optimizations */
+@media (max-width: 280px) {
+  .ultra-small-text { font-size: 0.7rem; }
+  .ultra-small-spacing { padding: 0.25rem; }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Prevent layout shift during image load */
+img {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Enhanced touch targets for mobile */
+@media (hover: none) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem;
+  }
+}
+
+/* Smooth animations */
+.transition-all {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent FOUC */
+.no-fouc {
+  visibility: hidden;
+}
+
+.fouc-ready {
+  visibility: visible;
+}

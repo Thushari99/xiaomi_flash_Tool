@@ -10,6 +10,7 @@
 
   <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+   <script src="/js/tailwind-howtouseconfig.js"></script>
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,41 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            white: '#FFFFFF',
-            darkGray: '#333333', 
-            orange: '#FF6A00',
-            lightGray: '#F7F7F7',
-            red: '#FF0000',
-            lightOrange: '#FF8533',
-            darkOrange: '#E56000',
-            mediumGray: '#666666',
-            veryLightGray: '#F0F0F0',
-            successGreen: '#22C55E',
-            warningYellow: '#F59E0B',
-          },
-          fontFamily: {
-            sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
-          },
-          spacing: {
-            'xs': '4px',
-            'sm': '8px', 
-            'md': '16px',
-            'lg': '24px',
-            'xl': '32px',
-            'xxl': '48px',
-          },
-        }
-      }
-    }
-  </script>
 </head>
+
 <body class="bg-lightGray font-sans">
 
   <%- include('partials/header') %>

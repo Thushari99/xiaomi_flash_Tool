@@ -1,0 +1,72 @@
+
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F7F7F7;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    main {
+      flex: 1 0 auto;
+    }
+    
+    footer {
+      flex-shrink: 0;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    /* Animation for card hover */
+    .download-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .download-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    /* Pulse animation for download buttons */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+    
+    .download-btn:hover {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 640px) {
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    /* Full-width section styles */
+    .full-width-section {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }

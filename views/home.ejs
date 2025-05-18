@@ -6,135 +6,12 @@
   <title>Xiaomi Flash Tool – Official Download</title>
   <meta name="description" content="Download Xiaomi Flash Tool & Mi Flash Pro to flash, recover, or unbrick your phone. Supports all Xiaomi, Redmi & POCO devices.">
   
-  <!-- Tailwind CSS via CDN -->
+<!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            white: '#FFFFFF',
-            darkGray: '#333333',
-            orange: '#FF6A00',
-            lightGray: '#F7F7F7',
-            red: '#FF0000',
-            lightOrange: '#FF8533',
-            darkOrange: '#E56000',
-            mediumGray: '#666666',
-            veryLightGray: '#F0F0F0',
-            successGreen: '#22C55E',
-            warningYellow: '#F59E0B',
-          },
-          fontFamily: {
-            sans: ['Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
-          },
-          screens: {
-            'iphone-se': '375px',
-            'iphone-xr': '414px',
-            'iphone-12': '390px',
-            'iphone-14': '428px',
-            'pixel-7': '412px',
-            'galaxy-s8': '360px',
-            'galaxy-s20': '384px',
-            'ipad-mini': '768px',
-            'ipad-air': '820px',
-            'ipad-pro': '1024px',
-            'surface-pro': '912px',
-            'surface-duo': '540px',
-            'galaxy-fold': '280px',
-            'zenbook-fold': '800px',
-            'galaxy-a51': '412px',
-            'nest-hub': '1024px',
-            'nest-hub-max': '1280px',
-          },
-          spacing: {
-            'xs': '4px',
-            'sm': '8px',
-            'md': '16px',
-            'lg': '24px',
-            'xl': '32px',
-            'xxl': '48px',
-          },
-          minHeight: {
-            'screen-75': '75vh',
-            'screen-85': '85vh',
-          },
-          maxWidth: {
-            'screen-xl': '1440px',
-          },
-        }
-      }
-    }
-  </script>
-  
-  <style>
-    /* Base styles for stability */
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
-    
-    body {
-      min-width: 280px; /* Support for Galaxy Fold */
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+  <script src="/js/tailwind-homeconfig.js"></script>
 
-    /* Prevent content shift */
-    * {
-      box-sizing: border-box;
-    }
+  <link rel="stylesheet" href="css/homestyle.css">
 
-    /* Enhanced container stability */
-    .container {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    /* Device-specific optimizations */
-    @media (max-width: 280px) {
-      .ultra-small-text { font-size: 0.7rem; }
-      .ultra-small-spacing { padding: 0.25rem; }
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-    }
-
-    /* Prevent layout shift during image load */
-    img {
-      aspect-ratio: attr(width) / attr(height);
-    }
-
-    /* Enhanced touch targets for mobile */
-    @media (hover: none) {
-      .touch-target {
-        min-height: 44px;
-        min-width: 44px;
-        padding: 0.5rem;
-      }
-    }
-
-    /* Smooth animations */
-    .transition-all {
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Prevent FOUC */
-    .no-fouc {
-      visibility: hidden;
-    }
-    
-    .fouc-ready {
-      visibility: visible;
-    }
-  </style>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -145,8 +22,10 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="font-sans text-darkGray bg-white no-fouc">
-  <%- include('partials/header') %>
+  
+<%- include('partials/header') %>
   
   <!-- Hero Section -->
   <section id="hero" class="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
@@ -618,115 +497,10 @@
   </section>
 
 
-
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="/js/home.js"></script>
 
   <%- include('partials/footer') %>
 
-  <!-- Lucide Icons Initialization -->
-  <script>
-    lucide.createIcons();
-  </script>
-
-  <!-- Main JavaScript -->
-  <script>
-    // Prevent FOUC
-    document.addEventListener('DOMContentLoaded', function() {
-      document.body.classList.add('fouc-ready');
-    });
-
-    // Prevent content jumping
-    window.addEventListener('load', function() {
-      document.body.classList.add('loaded');
-    });
-
-    // Smooth scroll handling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Responsive image loading
-    document.addEventListener('DOMContentLoaded', function() {
-      const images = document.querySelectorAll('img[data-src]');
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-            observer.unobserve(img);
-          }
-        });
-      });
-
-      images.forEach(img => imageObserver.observe(img));
-    });
-
-    // Accordion functionality for FAQ section with improved animation
-    const accordionToggles = document.querySelectorAll('.accordion-toggle');
-    
-    accordionToggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const content = toggle.nextElementSibling;
-        const icon = toggle.querySelector('i');
-        
-        // Close all accordion items
-        document.querySelectorAll('.accordion-content').forEach(content => {
-          if (content !== toggle.nextElementSibling) {
-            content.style.maxHeight = null;
-          }
-        });
-        
-        document.querySelectorAll('.accordion-toggle i').forEach(i => {
-          if (i !== icon) {
-            i.classList.remove('rotate-180');
-          }
-        });
-        
-        // Toggle current item with improved animation
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-          icon.classList.remove('rotate-180');
-        } else {
-          content.style.maxHeight = content.scrollHeight + 'px';
-          icon.classList.add('rotate-180');
-        }
-      });
-    });
-
-    // Detect device type for better interactions
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
-    // Enhance scroll animations with IntersectionObserver
-    const fadeElements = document.querySelectorAll('.fade-in-up');
-    
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    
-    fadeElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-      fadeObserver.observe(el);
-    });
-    
-    // Detect and optimize for foldable devices
-    if (window.screen && window.screen.availWidth <= 300) {
-      document.documentElement.classList.add('ultra-small-device');
-    }
-  </script>
 </body>
 </html>

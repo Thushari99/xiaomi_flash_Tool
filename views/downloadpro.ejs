@@ -10,6 +10,7 @@
   
   <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/js/tailwind-downloaprodconfig.js"></script>
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,113 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            white: '#FFFFFF',
-            darkGray: '#333333',
-            red: '#FF0000',
-            lightOrange: '#FF8533',
-            darkOrange: '#E56000',
-            warningYellow: '#F59E0B',
-            orange: {
-              DEFAULT: '#FF6A00',
-              light: '#FF8533',
-              dark: '#E56000',
-            },
-            lightGray: '#F7F7F7',
-            mediumGray: '#666666',
-            veryLightGray: '#F0F0F0',
-            successGreen: '#22C55E',
-            warningYellow: '#F59E0B',
-            errorRed: '#EF4444',
-          },
-          fontFamily: {
-            sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
-          },
-          spacing: {
-            'xs': '4px',
-            'sm': '8px',
-            'md': '16px',
-            'lg': '24px',
-            'xl': '32px',
-            'xxl': '48px',
-          },
-        }
-      }
-    }
-  </script>
-  
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    .section-fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    
-    .fade-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .btn-download:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3px rgba(255, 106, 0, 0.2);
-    }
-
-    /* Animation for card hover */
-    .download-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .download-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-       
-    
-    .faq-item.active .faq-answer {
-      max-height: 1000px;
-      padding: 1rem 0;
-    }
-    
-    .faq-icon {
-      transition: transform 0.3s ease;
-    }
-    
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-    
-    .section-fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    
-   
-    }
-    
-    /* Pulse animation for download buttons */
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.8;
-      }
-    }
-    
-    .download-btn:hover {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-  </style>
+ <link rel="stylesheet" href="css/homestyle.css">
 </head>
 
 <body class="min-h-screen bg-gray-50 font-sans text-darkGray">
@@ -593,67 +488,11 @@
     </div>
   </section>
 
-    
-
+ 
+  <script src="/js/download.js"></script>
+   
   <!-- Footer -->
   <%- include('partials/footer') %>
-
-  <!-- JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Fade in sections as they come into view
-      const sections = document.querySelectorAll('.section-fade-in');
-      
-      const fadeInOnScroll = function() {
-        sections.forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top;
-          const windowHeight = window.innerHeight;
-          
-          if (sectionTop < windowHeight * 0.85) {
-            section.classList.add('fade-in');
-          }
-        });
-      };
-      
-      // Initial check on page load
-      fadeInOnScroll();
-      
-      // Check on scroll
-      window.addEventListener('scroll', fadeInOnScroll);
-    });
-
-    const accordionToggles = document.querySelectorAll('.accordion-toggle');
-      
-      accordionToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          const content = toggle.nextElementSibling;
-          const icon = toggle.querySelector('i');
-          
-          // Close all accordion items
-          document.querySelectorAll('.accordion-content').forEach(c => {
-            if (c !== content) {
-              c.style.maxHeight = null;
-            }
-          });
-          
-          document.querySelectorAll('.accordion-toggle i').forEach(i => {
-            if (i !== icon) {
-              i.classList.remove('rotate-180');
-            }
-          });
-          
-          // Toggle current item
-          if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-            icon.classList.remove('rotate-180');
-          } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-            icon.classList.add('rotate-180');
-          }
-        });
-      });
-  </script>
-
 
 
    
